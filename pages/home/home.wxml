@@ -1,0 +1,84 @@
+<!--pages/home/home.wxml-->
+<found wx:if="{{curPage=='found'}}"></found>
+<my wx:if="{{curPage=='my'}}"></my>
+
+
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action navbar__item text-{{curPage=='home'?'blue':'gray'}}" bindtap="navChange" data-cur="home">
+    <view class='cuIcon-home text-bold navbar__icon icon'></view>
+    <view class="cu-avatar sm round avatar -blue shadow"><text class="text-black cuIcon-name text-sm"
+        style="margin-bottom:-85rpx;font-size:20rpx;color:#303030">主页</text></view>
+  </view>
+
+  <view class="action navbar__item text-{{curPage=='found'?'orange':'gray'}}" bindtap="navChange" data-cur="found">
+    <view class='cuIcon-rankfill text-bold navbar__icon icon'></view>
+    <view class="cu-avatar sm round avatar -orange shadow"><text class="text-balck cuIcon-name text-sm"
+        style="margin-bottom:-85rpx;font-size:20rpx;color:#303030">发现</text></view>
+  </view>
+
+  <view class="action navbar__item text-{{curPage=='my'?'purple':'gray'}}" bindtap="navChange" data-cur="my">
+    <view class='cuIcon-my text-bold navbar__icon icon'></view>
+    <view class="cu-avatar sm round avatar -purple shadow"><text class="text-balck cuIcon-name text-sm"
+        style="margin-bottom:-85rpx;font-size:20rpx;color:#303030">我的</text></view>
+  </view>
+</view>
+
+<block wx:if="{{curPage==='home'}}">
+  <image
+    src="http://m.qpic.cn/psc?/V53HUzqu1STio82SCfOY2wZWaR1AsHvj/45NBuzDIW489QBoVep5mcWm9fSVgRQOaBNrJ.muEwSH5tWRdwq4P0bbsw.n9KTamOZR.y2ZxDDkqYwehllwtNGdjX3Nr4JUDj3lrewKFmN8!/b&bo=gAJVAYACVQEBGT4!&rf=viewer_4&t=5"
+    style="width:700rpx;height:360rpx;left:25rpx;" />
+
+  <view class="bottom-container" />
+  <view class="point" style="position: absolute;top:300rpx;left: 100rpx;" />
+  <view class="wand" style="position: absolute;top:267rpx;left: 106rpx;" />
+  <view class="point" style="position: absolute;top:300rpx;right: 100rpx;" />
+  <view class="wand" style="position: absolute;top:267rpx;right: 106rpx;" />
+
+  <view class="card1" bindtap="click1">
+    <view
+      style="background-color:#4d9fff;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
+      <image src="/icon/font.svg" style="width:66rpx;height:66rpx;position:absolute;top:19rpx;left:19rpx;" />
+    </view>
+    <text style="font-size:35rpx;font-weight:700;position:absolute;top:20rpx;left:150rpx">拍照取词</text>
+    <text style="font-size:25rpx;color:#8c9498;position:absolute;top:75rpx;left:150rpx">已学12/25个单词</text>
+    <text class='cuIcon-right' style="font-size:40rpx;color:#9e9e9e;position:absolute;right:40rpx;top:45rpx" />
+  </view>
+
+  <view class="card2" bindtap="click2">
+    <view
+      style="background-color:#febc30;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
+      <image src="/icon/pen.svg" style="width:58rpx;height:58rpx;position:absolute;top:21rpx;left:21rpx;" />
+    </view>
+    <text style="font-size:35rpx;font-weight:700;position:absolute;top:20rpx;left:150rpx">教材选词</text>
+    <text style="font-size:25rpx;color:#8c9498;position:absolute;top:75rpx;left:150rpx">已掌握8/25个单词</text>
+    <text class='cuIcon-right' style="font-size:40rpx;color:#9e9e9e;position:absolute;right:40rpx;top:45rpx" />
+  </view>
+
+  <view class="card3" bindtap="click3">
+    <view
+      style="background-color:#bc9efd;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
+      <image src="/icon/cup.svg" style="width:60rpx;height:60rpx;position:absolute;top:20rpx;left:20rpx;" />
+    </view>
+    <text style="font-size:35rpx;font-weight:700;position:absolute;top:20rpx;left:150rpx">挑战闯关</text>
+    <text style="font-size:25rpx;color:#8c9498;position:absolute;top:75rpx;left:150rpx">每次十道题</text>
+    <text class='cuIcon-right' style="font-size:40rpx;color:#9e9e9e;position:absolute;right:40rpx;top:45rpx" />
+  </view>
+
+  <image src="/icon/wheel.png" style="width:45rpx;height:45rpx;position:absolute;top:950rpx;left:50rpx;"/>
+  <text style="position:absolute;top:950rpx;left:100rpx;font-size:30rpx;font-weight:800">课外学习</text>
+
+  <view style="display:flex;flex-direction:row;position:absolute;top:1020rpx">
+    <view class="bar-{{curBar=='1'?'chosen':'nochosen'}}" bindtap="barChange" data-cur="1" style="position:relative;left:50rpx">
+      <text class="barText" style="color:{{curBar=='1'?'white':'#cfd6d9'}};font-weight:{{curBar=='1'?'600':'400'}}">科幻故事</text>
+    </view>
+    <view class="bar-{{curBar=='2'?'chosen':'nochosen'}}" bindtap="barChange" data-cur="2" style="position:relative;left:80rpx">
+      <text class="barText" style="color:{{curBar=='2'?'white':'#cfd6d9'}};font-weight:{{curBar=='2'?'600':'400'}}">历史人文</text>
+    </view>
+    <view class="bar-{{curBar=='3'?'chosen':'nochosen'}}" bindtap="barChange" data-cur="3" style="position:relative;left:110rpx">
+      <text class="barText" style="color:{{curBar=='3'?'white':'#cfd6d9'}};font-weight:{{curBar=='3'?'600':'400'}}">日常对话</text>
+    </view>
+    <view class="bar-{{curBar=='4'?'chosen':'nochosen'}}" bindtap="barChange" data-cur="4" style="position:relative;left:140rpx">
+      <text class="barText" style="color:{{curBar=='4'?'white':'#cfd6d9'}};font-weight:{{curBar=='4'?'600':'400'}}">自然地理</text>
+    </view>
+  </view>
+</block>

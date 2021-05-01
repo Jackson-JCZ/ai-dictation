@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "found": "/pages/found/found",
+    "my": "/pages/my/my"
+  }
+}
