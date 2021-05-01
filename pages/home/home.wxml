@@ -64,21 +64,29 @@
     <text class='cuIcon-right' style="font-size:40rpx;color:#9e9e9e;position:absolute;right:40rpx;top:45rpx" />
   </view>
 
-  <image src="/icon/wheel.png" style="width:45rpx;height:45rpx;position:absolute;top:950rpx;left:50rpx;"/>
+  <image src="/icon/wheel.png" style="width:45rpx;height:45rpx;position:absolute;top:950rpx;left:50rpx;" />
   <text style="position:absolute;top:950rpx;left:100rpx;font-size:30rpx;font-weight:800">课外学习</text>
 
   <view style="display:flex;flex-direction:row;position:absolute;top:1020rpx">
-    <view class="bar-{{curBar=='1'?'chosen':'nochosen'}}" bindtap="barChange" data-cur="1" style="position:relative;left:50rpx">
-      <text class="barText" style="color:{{curBar=='1'?'white':'#cfd6d9'}};font-weight:{{curBar=='1'?'600':'400'}}">科幻故事</text>
+    <view class="bar-{{curBar=='1'?'chosen':'nochosen'}}" bindtap="barChange" data-cur="1"
+      style="position:relative;left:50rpx">
+      <text class="barText"
+        style="color:{{curBar=='1'?'white':'#cfd6d9'}};font-weight:{{curBar=='1'?'600':'400'}}">科幻故事</text>
     </view>
-    <view class="bar-{{curBar=='2'?'chosen':'nochosen'}}" bindtap="barChange" data-cur="2" style="position:relative;left:80rpx">
-      <text class="barText" style="color:{{curBar=='2'?'white':'#cfd6d9'}};font-weight:{{curBar=='2'?'600':'400'}}">历史人文</text>
+    <view class="bar-{{curBar=='2'?'chosen':'nochosen'}}" bindtap="barChange" data-cur="2"
+      style="position:relative;left:80rpx">
+      <text class="barText"
+        style="color:{{curBar=='2'?'white':'#cfd6d9'}};font-weight:{{curBar=='2'?'600':'400'}}">历史人文</text>
     </view>
-    <view class="bar-{{curBar=='3'?'chosen':'nochosen'}}" bindtap="barChange" data-cur="3" style="position:relative;left:110rpx">
-      <text class="barText" style="color:{{curBar=='3'?'white':'#cfd6d9'}};font-weight:{{curBar=='3'?'600':'400'}}">日常对话</text>
+    <view class="bar-{{curBar=='3'?'chosen':'nochosen'}}" bindtap="barChange" data-cur="3"
+      style="position:relative;left:110rpx">
+      <text class="barText"
+        style="color:{{curBar=='3'?'white':'#cfd6d9'}};font-weight:{{curBar=='3'?'600':'400'}}">日常对话</text>
     </view>
-    <view class="bar-{{curBar=='4'?'chosen':'nochosen'}}" bindtap="barChange" data-cur="4" style="position:relative;left:140rpx">
-      <text class="barText" style="color:{{curBar=='4'?'white':'#cfd6d9'}};font-weight:{{curBar=='4'?'600':'400'}}">自然地理</text>
+    <view class="bar-{{curBar=='4'?'chosen':'nochosen'}}" bindtap="barChange" data-cur="4"
+      style="position:relative;left:140rpx">
+      <text class="barText"
+        style="color:{{curBar=='4'?'white':'#cfd6d9'}};font-weight:{{curBar=='4'?'600':'400'}}">自然地理</text>
     </view>
   </view>
 </block>

@@ -1,2 +1,8 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view style="background-color:rgb(105,226,208);width:750rpx;height:400rpx">
+  <button hover-class="none"
+    style="background-color:rgb(105,226,208);width:50rpx;height:70rpx;position:absolute;top:20rpx;right:30rpx"
+    open-type="contact" session-from="weapp" />
+  <text class="cuIcon-message" style="pointer-events:none;font-size:60rpx;color:white;position:absolute;top:20rpx;right:40rpx" />
+</view>
+<view style="background-color:white;width:750rpx;height:100rpx;position:relative;top:-50rpx;border-radius:50rpx" />

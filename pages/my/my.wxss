@@ -1,1 +1,4 @@
 /* pages/my/my.wxss */
+.btn::after{
+  border:0;
+}

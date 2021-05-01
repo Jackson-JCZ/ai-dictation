@@ -3,7 +3,7 @@
 @import "/colorui/main.wxss";
 
 page {
-  background-color: white
+  background-color: white;
 }
 
 .components-mimicry {
@@ -265,7 +265,7 @@ page {
   border-radius: 30rpx;
 }
 
-.bar-nochosen{
+.bar-nochosen {
   width: 140rpx;
   height: 60rpx;
   background-color: white;
@@ -273,7 +273,7 @@ page {
   border-radius: 30rpx;
 }
 
-.barText{
+.barText {
   font-size: 24rpx;
   position: absolute;
   left: 24rpx;
