@@ -1,0 +1,2 @@
+<!--pages/photo/photo2/photo2.wxml-->
+<image mode="widthFix" style="width:100%" src="{{src}}"></image>
