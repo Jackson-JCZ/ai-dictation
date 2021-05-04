@@ -87,6 +87,10 @@ page {
   color: #f2704d;
 }
 
+.navbar__item.-green {
+  color: #39b54a;
+}
+
 .navbar__item.-navy-blue {
   color: #405fff;
 }
@@ -105,6 +109,10 @@ page {
 
 .avatar.-orange {
   color: #f2704d;
+}
+
+.avatar.-green {
+  color: #39b54a;
 }
 
 .avatar.-navy-blue {
