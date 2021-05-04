@@ -3,6 +3,7 @@ Page({
   data: {
     curPage: "home",
     curBar: '1',
+    studyList: ['科幻故事','历史人文','日常对话','自然地理']
   },
   navChange(e) {
     this.setData({
