@@ -1,18 +1,6 @@
 // pages/photo/photo.js
 const app = getApp();
 Page({
-  onLoad: function () {
-    this.setData({
-      height: wx.getSystemInfoSync().windowHeight
-    })
-    wx.getSystemInfo({
-      success: (res)=> {
-        this.setData({
-          statusBarHeight: res.statusBarHeight
-        })
-      }
-    })
-  },
   takePhoto() {
     wx.getSetting({
       success:(res)=> {

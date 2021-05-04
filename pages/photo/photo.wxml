@@ -1,6 +1,6 @@
 <!--pages/photo/photo.wxml-->
 <camera device-position="back" flash="off" binderror="error"
-  style="width:100%;height:{{height * 2 - 270 - statusBarHeight}}rpx;">
+  style="width:100%;height:calc(100vh - 230rpx);">
 </camera>
 <image bindtap="takePhoto" src="/icon/shoot.svg"
   style="width:150rpx;height:150rpx;position:fixed;left:300rpx;bottom:40rpx"></image>
