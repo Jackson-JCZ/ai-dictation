@@ -2,10 +2,9 @@
 <view style="height:100vh;width:188rpx;position:absolute;background-color:white"></view>
 <view class="VerticalBox">
   <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}"
-    style="height:800rpx;width:250rpx;position:relative;top:calc(50vh - 400rpx);">
+    style="height:800rpx;width:250rpx;">
     <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{list}}" wx:key="index" bindtap='tabSelect'
       data-id="{{index}}">
-      <!-- Tab-{{item.name}} -->
       <text style="font-size:26rpx">{{item.name}}</text>
     </view>
   </scroll-view>
