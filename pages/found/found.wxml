@@ -1,4 +1,10 @@
 <!--pages/found/found.wxml-->
-<text>pages/found/found.wxml</text>
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-green cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{TabIndex[index]}}
+    </view>
+  </view>
+</scroll-view>
 
 
