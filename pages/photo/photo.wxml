@@ -4,5 +4,4 @@
 </camera>
 <image bindtap="takePhoto" src="/icon/shoot.svg"
   style="width:150rpx;height:150rpx;position:fixed;left:300rpx;bottom:40rpx"></image>
-<image bindtap="chooseImage" src="/icon/photo.svg"
-  style="width:70rpx;height:70rpx;position:fixed;right:100rpx;bottom:80rpx"></image>
+<text bindtap="chooseImage" class="cuIcon-picfill text-gray" style="font-size:70rpx;position:fixed;right:100rpx;bottom:80rpx" />
