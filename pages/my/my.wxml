@@ -1,8 +1,44 @@
 <!--pages/my/my.wxml-->
-<view style="background-color:rgb(105,226,208);width:750rpx;height:400rpx">
+<view style="background-color:rgb(105,226,208);width:750rpx;height:400rpx" class="UCenter-bg">
   <button hover-class="none"
     style="background-color:rgb(105,226,208);width:50rpx;height:70rpx;position:absolute;top:20rpx;right:30rpx"
     open-type="contact" session-from="weapp" />
-  <text class="cuIcon-message" style="pointer-events:none;font-size:60rpx;color:white;position:absolute;top:20rpx;right:40rpx" />
+  <text class="cuIcon-message"
+    style="pointer-events:none;font-size:60rpx;color:white;position:absolute;top:20rpx;right:40rpx" />
+  <image src="https://ftp.bmp.ovh/imgs/2019/12/83388a096d28fab7.gif" mode="scaleToFill"
+    class="gif-wave"></image>
 </view>
-<view style="background-color:white;width:750rpx;height:100rpx;position:relative;top:-50rpx;border-radius:50rpx" />
+<!-- <view style="background-color:white;width:750rpx;height:100rpx;position:relative;top:-50rpx;border-radius:50rpx" /> -->
+
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow bg-white radius">
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/about/log/log" hover-class="none">
+      <text class="cuIcon-formfill text-cyan"></text>
+      <text class="text-grey">个人信息</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/about/log/log" hover-class="none">
+      <text class="cuIcon-writefill text-brown"></text>
+      <text class="text-grey">学习记录</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/about/log/log" hover-class="none">
+      <text class="cuIcon-favorfill text-red"></text>
+      <text class="text-grey">我的收藏</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/about/log/log" hover-class="none">
+      <text class="cuIcon-squarecheckfill text-orange"></text>
+      <text class="text-grey">我的打卡</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/about/log/log" hover-class="none">
+      <text class="cuIcon-peoplefill text-green"></text>
+      <text class="text-grey">关于我们</text>
+    </navigator>
+  </view>
+</view>

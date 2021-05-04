@@ -1,4 +1,14 @@
 /* pages/my/my.wxss */
-.btn::after{
-  border:0;
+.UCenter-bg {
+  position: relative;
+}
+
+.UCenter-bg .gif-wave{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  mix-blend-mode: screen;  
+  height: 100rpx;   
 }
