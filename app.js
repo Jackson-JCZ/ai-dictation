@@ -5,6 +5,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    src: ''
+    src: '',
+    wordsList: []
   }
 })

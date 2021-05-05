@@ -1,3 +1,8 @@
+wx.cloud.init({
+  env: 'database-2gt2op0zc763020f'
+});
+const db = wx.cloud.database();
+const app = getApp();
 Page({
   data: {
     TabCur: 0,
@@ -19,6 +24,17 @@ Page({
       list[i].name = tname[i];
       list[i].id = i;
     }
+
+    db.collection('grade3_1').where({
+      unit: 0
+    }).get({
+      success:res=>{
+        this.setData({
+          wordsNum: res.data[0]['wordsNumber']
+        })
+      }
+    })
+
     this.setData({
       list: list,
       listCur: list[0]
@@ -64,5 +80,19 @@ Page({
         return false
       }
     }
+  },
+  click(e){
+    var unit = e.currentTarget.dataset.cur
+    db.collection('grade3_1').where({
+      unit: unit + 1
+    }).get({
+      success:res=>{
+        // console.log(res.data[0]['words'])
+        app.globalData.wordsList = res.data[0]['words']
+        wx.navigateTo({
+          url: '/pages/chooseWord/chooseWord',
+        })
+      }
+    })
   }
 })

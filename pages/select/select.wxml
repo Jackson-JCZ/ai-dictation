@@ -19,17 +19,21 @@
       <view class="cu-list menu-avatar">
 
         <view class="cu-item" style="height:250rpx" wx:for="{{6}}" wx:key="index">
-          <image mode="aspectFit" style="width:150rpx;position:absolute;left:30rpx"
-            src="https://th.bing.com/th/id/R7e284531f9e703811fcdfe4f8ecd015b?rik=p4BTFRtnMmhW%2bg&riu=http%3a%2f%2fwww.kjzhan.com%2fuploads%2fallimg%2f150705%2f1-150F50T041.jpg&ehk=oPKVzoE2T0doZ4Ph0kNBwck8Cyf27JJRMz%2baqWD2xgE%3d&risl=&pid=ImgRaw">
+          <image style="height:220rpx;width:150rpx;position:absolute;left:30rpx;top:0rpx;"
+            src="http://m.qpic.cn/psc?/V53HUzqu1STio82SCfOY2wZWaR1AsHvj/45NBuzDIW489QBoVep5mca2q4nW6bMTvwNAgB2tQOZYKQ5EltKGiAGJakocIyz8lpjD4j2Idsj43rspJorQVG2hZHjbcb.c7X.kljScSr1I!/b&bo=IAOIBAAAAAABF58!&rf=viewer_4&t=5">
           </image>
           <text style="position:absolute;left:230rpx;top:30rpx;font-size:30rpx">Unit {{index+1}}</text>
           <text class="text-bold text-gray"
             style="position:absolute;left:230rpx;top:80rpx;font-size:25rpx;">{{Unit[index]}}</text>
           <view class="cu-btn round line-gray"
             style="position:absolute;left:230rpx;top:170rpx;width:220rpx;height:45rpx"><text style="font-size:23rpx"
-              space="ensp">单词数 20</text></view>
+              space="ensp">单词数 {{wordsNum[index]}}</text></view>
           <text class="cuIcon-roundrightfill text-blue"
             style="position:absolute;right:30rpx;top:25rpx;font-size:40rpx"></text>
+          <!-- 点击 -->
+          <view bindtap="click" data-cur="{{index}}"
+            style="width:500rpx;height:250rpx;position:absolute;top:0rpx;left:0rpx">
+          </view>
         </view>
 
       </view>

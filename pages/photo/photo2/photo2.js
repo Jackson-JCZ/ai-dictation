@@ -64,7 +64,12 @@ Page({
                   language_type: 'ENG'
                 },
                 success: (_res) => {
-                  app.globalData.words = _res.data.words_result
+                  var wordsList = [];
+                  for(let i=0;i<_res.data.words_result.length;i++)
+                  {
+                    wordsList.push(_res.data.words_result[i]['words'])
+                  }
+                  app.globalData.wordsList = wordsList
                   wx.hideLoading();
                   wx.navigateTo({
                     url: '/pages/chooseWord/chooseWord',
