@@ -70,7 +70,7 @@
   <view style="position:absolute;top:980rpx;left:25rpx;width:700rpx" class="grid col-4 padding-sm">
     <view class="margin-tb-sm text-center" wx:for="{{studyList}}" wx:key="index">
       <button bindtap="barChange" data-cur="{{index + 1}}"
-        class="cu-btn round {{curBar==index+1?'bg-blue':'line-gray'}} {{shadow?'shadow':''}}" style="width:150rpx">
+        class="cu-btn round {{curBar==index+1?'bg-blue':'line-gray'}}" style="width:150rpx">
         <text style="font-size:23rpx">{{item}}</text>
         </button>
     </view>
