@@ -6,7 +6,8 @@
     "pages/photo/photo",
     "pages/select/select",
     "pages/challenge/challenge",
-    "pages/photo/photo2/photo2"
+    "pages/photo/photo2/photo2",
+    "pages/chooseWord/chooseWord"
   ],
   "window": {
     "backgroundTextStyle": "light",
