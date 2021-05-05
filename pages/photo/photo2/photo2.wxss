@@ -1,1 +1,12 @@
 /* pages/photo/photo2/photo2.wxss */
+@import "/colorui/icon.wxss";
+@import "/colorui/main.wxss";
+
+.bottom {
+  background-color: white;
+  position: absolute;
+  width: 750rpx;
+  bottom: 0rpx;
+  z-index: 10;
+  height: 150rpx;
+}

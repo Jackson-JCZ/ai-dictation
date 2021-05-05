@@ -1,2 +1,10 @@
 <!--pages/photo/photo2/photo2.wxml-->
-<image mode="widthFix" style="width:100%" src="{{src}}"></image>
+<!-- <image mode="widthFix" style="width:100%" src="{{src}}"></image> -->
+<image-cropper id="image-cropper" limit_move="{{true}}" disable_rotate="{{true}}" width="{{width}}" height="{{height}}"
+  imgSrc="{{src}}" bindimageload="loadimage"></image-cropper>
+
+<button class="cu-btn bg-grey" style="position:absolute;top:20rpx;right:20rpx;z-index:10;width:70rpx;height:70rpx;border-radius:50%" catchtouchstart='rotate' catchtouchend='end' data-type="rotate">
+<text class="cuIcon-refresh text-white" style="font-size:40rpx"></text>
+</button>
+
+  <button class="cu-btn round bg-green" style="position:absolute;bottom:40rpx;z-index:5;width:300rpx;left:225rpx;" bindtap="submit">确定</button>
