@@ -1,5 +1,5 @@
 <!--pages/chooseWord/chooseWord.wxml-->
-<text>pages/chooseWord/chooseWord.wxml</text>
+<!-- <text>pages/chooseWord/chooseWord.wxml</text> -->
 <view wx:for="{{wordsList}}" wx:key="index">
 {{item}}
 </view>
