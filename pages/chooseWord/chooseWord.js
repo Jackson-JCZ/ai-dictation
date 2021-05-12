@@ -46,12 +46,14 @@ Page({
   showModal(e) {
     this.setData({
       modalName: e.currentTarget.dataset.target,
-      wordIndex: e.currentTarget.dataset.cur
+      wordIndex: e.currentTarget.dataset.cur,
+      inputWord: this.data.wordsList[e.currentTarget.dataset.cur]
     })
     // console.log(this.data.wordIndex)
   },
   hideModal() {
     this.setData({
+      inputWord: '',
       modalName: null
     })
   },
@@ -69,19 +71,34 @@ Page({
     })
   },
   changeWord() {
+    if(this.data.inputWord==''){
+      wx.showToast({
+        title:'请输入单词',
+        icon: 'error'
+      })
+    }else{
     var newList = this.data.wordsList;
     newList[this.data.wordIndex] = this.data.inputWord;
     this.setData({
       wordsList: newList
     })
     this.hideModal();
+  }
   },
   addWord(){
+    console.log(this.data.inputWord)
+    if((this.data.inputWord==null)||(this.data.inputWord=='')){
+      wx.showToast({
+        title:'请输入单词',
+        icon: 'error'
+      })
+    }else{
     var newList = this.data.wordsList;
     newList.unshift(this.data.inputWord)
     this.setData({
       wordsList: newList
     })
     this.hideModal();
+  }
   }
 })

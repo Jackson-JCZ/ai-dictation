@@ -69,7 +69,7 @@
       <view class="content"><text style="font-weight:600;font-size:35rpx;">添加</text></view>
     </view>
     <view class="padding-lg">
-      <input placeholder="请输入单词" bindinput="inpu"/>
+      <input placeholder="请输入单词" value="{{inputWord}}" bindinput="inpu"/>
     </view>
     <view class="cu-bar bg-white">
       <view class="action margin-0 flex-sub" bindtap="hideModal">取消</view>
