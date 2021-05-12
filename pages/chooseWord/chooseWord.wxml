@@ -1,5 +1,79 @@
 <!--pages/chooseWord/chooseWord.wxml-->
 <!-- <text>pages/chooseWord/chooseWord.wxml</text> -->
-<view wx:for="{{wordsList}}" wx:key="index">
-{{item}}
+<!-- <view class="cu-btn round bg-grey" style="position:relative;left:600rpx">修改</view> -->
+<view style="position:relative;left:{{isEdit?'30':'670'}}rpx;width:{{isEdit?'690':'50'}}rpx;height:60rpx;">
+  <text wx:if="{{!isEdit}}" bindtap="changeEdit" class="cuIcon-edit" style="font-size:50rpx;color:#707070;"></text>
+  <text wx:if="{{isEdit}}" bindtap="showModal" data-target="DialogModal3" style="font-size:35rpx;color:#1890FF;">添加</text>
+  <text wx:if="{{isEdit}}" bindtap="changeEdit" style="font-size:35rpx;color:#1890FF;position:absolute;right:0rpx;">完成</text>
+</view>
+
+<view wx:for="{{wordsList}}" wx:key="index" style="height:250rpx;position:relative;top:25rpx;">
+  <view class="cu-btn bg-white card">
+    <text style="font-size:40rpx;font-weight:650;position:absolute;top:40rpx;left:35rpx;">{{item}}</text>
+    <text style="position:absolute;top:50rpx;left:235rpx;">此处应有音标</text>
+    <text style="position:absolute;top:120rpx;left:35rpx;">这里是单词释义</text>
+
+    <view class="edit animation-{{animation==slide?slide:''}}" wx:if="{{isEdit}}">
+      <view style="width:150rpx;height:200rpx;position:absolute;right:0rpx;" bindtap="showModal"
+        data-target="DialogModal" data-cur="{{index}}">
+        <image src="/icon/delete.svg" style="width:50rpx;height:50rpx;position:absolute;left:50rpx;top:60rpx;"></image>
+        <text style="color:#1890FF;position:relative;top:125rpx;">删除</text>
+      </view>
+      <view style="width:150rpx;height:200rpx;position:absolute;right:150rpx;" bindtap="showModal" data-target="DialogModal2" data-cur="{{index}}">
+        <image src="/icon/edit.svg" style="width:40rpx;height:40rpx;position:absolute;left:55rpx;top:65rpx;"></image>
+        <text style="color:#1890FF;position:relative;top:125rpx;">编辑</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view style="background-color:white;width:750rpx;height:150rpx;"></view><!-- 占位 -->
+
+<view class="block" style="text-center">
+  <button class="cu-btn round bg-cyan" style="height:70rpx;width:600rpx;left:75rpx;top:20rpx">开始学习</button>
+</view>
+
+<!-- 删除 -->
+<view class="cu-modal {{modalName=='DialogModal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="padding-xl bg-white">
+      <text style="font-weight:600;font-size:35rpx;">确定删除?</text>
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub text-green" bindtap="hideModal">取消</view>
+      <view class="action margin-0 flex-sub solid-left" bindtap="deleteWord">确定</view>
+    </view>
+  </view>
+</view>
+
+<!-- 编辑 -->
+<view class="cu-modal {{modalName=='DialogModal2'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content"><text style="font-weight:600;font-size:35rpx;">编辑</text></view>
+    </view>
+    <view class="padding-lg">
+      <input value="{{wordsList[wordIndex]}}" placeholder="请输入单词" bindinput="inpu"/>
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub" bindtap="hideModal">取消</view>
+      <view class="action margin-0 flex-sub  solid-left text-green" bindtap="changeWord">确定</view>
+    </view>
+  </view>
+</view>
+
+<!-- 添加 -->
+<view class="cu-modal {{modalName=='DialogModal3'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content"><text style="font-weight:600;font-size:35rpx;">添加</text></view>
+    </view>
+    <view class="padding-lg">
+      <input placeholder="请输入单词" bindinput="inpu"/>
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub" bindtap="hideModal">取消</view>
+      <view class="action margin-0 flex-sub  solid-left text-green" bindtap="addWord">确定</view>
+    </view>
+  </view>
 </view>

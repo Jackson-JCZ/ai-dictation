@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isEdit: false,
+    slide: 'slide-right'
   },
 
   /**
@@ -16,54 +17,71 @@ Page({
     this.setData({
       wordsList: app.globalData.wordsList
     })
+    // wx.request({
+    //   url: 'https://api.tianapi.com/txapi/enwords/index',
+    //   method: 'GET',
+    //   data: {
+    //     key: '7617c6dcc97874bddb501a8138ed6ab2',
+    //     word: app.globalData.wordsList[0]
+    //   },
+    //   success: res=>{
+    //     console.log(res.data.newslist[0]['content'])
+    //   }
+    // })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  changeEdit() {
+    var that = this;
+    // var anmiaton = e.currentTarget.dataset.class;
+    that.setData({
+      animation: 'slide-right',
+      isEdit: this.data.isEdit == false
+    });
+    setTimeout(function () {
+      that.setData({
+        animation: ''
+      })
+    }, 1000)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  showModal(e) {
+    this.setData({
+      modalName: e.currentTarget.dataset.target,
+      wordIndex: e.currentTarget.dataset.cur
+    })
+    // console.log(this.data.wordIndex)
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  hideModal() {
+    this.setData({
+      modalName: null
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  deleteWord() {
+    var newList = this.data.wordsList;
+    newList.splice(this.data.wordIndex, 1);
+    this.setData({
+      wordsList: newList
+    })
+    this.hideModal()
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  inpu(e) {
+    this.setData({
+      inputWord: e.detail.value
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  changeWord() {
+    var newList = this.data.wordsList;
+    newList[this.data.wordIndex] = this.data.inputWord;
+    this.setData({
+      wordsList: newList
+    })
+    this.hideModal();
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  addWord(){
+    var newList = this.data.wordsList;
+    newList.unshift(this.data.inputWord)
+    this.setData({
+      wordsList: newList
+    })
+    this.hideModal();
   }
 })

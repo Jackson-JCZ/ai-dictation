@@ -1,1 +1,33 @@
 /* pages/chooseWord/chooseWord.wxss */
+@import "/colorui/icon.wxss";
+@import "/colorui/main.wxss";
+@import "/colorui/animation.wxss";
+
+page {
+  background-color: white;
+}
+
+.card {
+  left: 25rpx;
+  width: 700rpx;
+  height: 200rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.15);
+  border-radius: 10rpx;
+}
+
+.block{
+  position: fixed;
+  bottom: 0rpx;
+  height: 130rpx;
+  width: 100%;
+  background-color: white;
+}
+
+.edit{
+  background: linear-gradient(to right, rgba(0,0,0,0), white, white);
+  width:500rpx;
+  height: 200rpx;
+  position: absolute;
+  right:0rpx;
+  border-radius: 10rpx;
+}
