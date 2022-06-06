@@ -29,6 +29,7 @@ Page({
       unit: 0
     }).get({
       success:res=>{
+        console.log(res)
         this.setData({
           wordsNum: res.data[0]['wordsNumber']
         })
