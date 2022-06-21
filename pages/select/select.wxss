@@ -1,6 +1,4 @@
 /* pages/select/select.wxss */
-@import "/colorui/icon.wxss";
-@import "/colorui/main.wxss";
 
 .VerticalNav.nav {
   width: 200rpx;

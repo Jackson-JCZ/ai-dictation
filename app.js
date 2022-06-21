@@ -4,10 +4,7 @@ App({
 
   },
   globalData: {
-    userInfo: {
-      nickName: '请先登录',
-      avatarUrl: '/icon/portrait.svg'
-    },
+    isLogin: false,
     src: '',
     wordsList: []
   },

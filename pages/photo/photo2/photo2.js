@@ -43,7 +43,7 @@ Page({
       let myDate = new Date();
       //上传图片
       wx.cloud.uploadFile({
-        cloudPath: myDate.getTime() + '.png',
+        cloudPath: 'photo/' + myDate.getTime() + '.png',
         filePath: obj.url,
         success: res => {
           let fileID = res.fileID;

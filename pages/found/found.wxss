@@ -1,2 +1,7 @@
 /* pages/found/found.wxss */
+@import "/colorui/icon.wxss";
+@import "/colorui/main.wxss";
 
+page {
+  background-color: white;
+}

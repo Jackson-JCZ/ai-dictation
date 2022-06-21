@@ -1,4 +1,11 @@
 /* pages/my/my.wxss */
+@import "/colorui/icon.wxss";
+@import "/colorui/main.wxss";
+
+page{
+  background-color: white;
+}
+
 .UCenter-bg {
   position: relative;
 }

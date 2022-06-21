@@ -1,10 +1,4 @@
 /* pages/home/home.wxss */
-@import "/colorui/icon.wxss";
-@import "/colorui/main.wxss";
-
-page {
-  background-color: white;
-}
 
 .components-mimicry {
   background-color: #F7FCFF;
@@ -217,7 +211,7 @@ page {
   position: relative;
   top: -100rpx;
   margin: 0 25rpx;
-  background-color: #ffffff;
+  background-color: white;
   border-radius: 25rpx;
 }
 

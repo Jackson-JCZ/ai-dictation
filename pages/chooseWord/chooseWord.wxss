@@ -1,11 +1,4 @@
 /* pages/chooseWord/chooseWord.wxss */
-@import "/colorui/icon.wxss";
-@import "/colorui/main.wxss";
-@import "/colorui/animation.wxss";
-
-page {
-  background-color: white;
-}
 
 .card {
   left: 25rpx;

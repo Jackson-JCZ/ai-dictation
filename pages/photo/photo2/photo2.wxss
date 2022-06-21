@@ -1,6 +1,4 @@
 /* pages/photo/photo2/photo2.wxss */
-@import "/colorui/icon.wxss";
-@import "/colorui/main.wxss";
 
 .bottom {
   background-color: white;
