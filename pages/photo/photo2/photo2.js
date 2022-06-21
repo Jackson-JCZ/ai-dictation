@@ -40,40 +40,49 @@ Page({
     this.cropper.getImg((obj) => {
       // app.globalData.imgSrc = obj.url;
 
-      var myDate = new Date();
+      let myDate = new Date();
       //上传图片
       wx.cloud.uploadFile({
         cloudPath: myDate.getTime() + '.png',
         filePath: obj.url,
         success: res => {
-          var fileID = res.fileID;
+          let fileID = res.fileID;
           //获取临时链接
           wx.cloud.getTempFileURL({
             fileList: [fileID],
             success: _res => {
-              var fileURL = _res.fileList[0].tempFileURL
+              // var fileURL = _res.fileList[0].tempFileURL
               //文字识别
               wx.request({
-                url: 'https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token=' + '24.4636ca9286ed0e996c0e8979979f20bf.2592000.1622739340.282335-24108924',
+                url: 'https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token=' + '24.32fb439643c91f4161990c0c2df80430.2592000.1658078016.282335-24108924',
                 method: 'POST',
                 header: {
                   'Content-Type': 'application/x-www-form-urlencoded'
                 },
                 data: {
-                  url: fileURL,
-                  language_type: 'ENG'
+                  url: _res.fileList[0].tempFileURL,
+                  language_type: 'ENG',
+                  detect_direction: 'true'
                 },
                 success: (_res) => {
-                  var wordsList = [];
-                  for(let i=0;i<_res.data.words_result.length;i++)
-                  {
-                    wordsList.push(_res.data.words_result[i]['words'])
+                  console.log(_res)
+                  let wordsList = [];
+                  if (_res.data.words_result.length === 0) {
+                    wx.hideLoading();
+                    wx.showToast({
+                      title: '未检测到单词',
+                      icon: 'error'
+                    });
+                  } else {
+                    for (let i = 0; i < _res.data.words_result.length; i++) {
+                      wordsList.push(_res.data.words_result[i]['words']);
+                    }
+                    app.globalData.wordsList = wordsList;
+                    wx.hideLoading();
+                    wx.navigateTo({
+                      url: '/pages/chooseWord/chooseWord',
+                    });
                   }
-                  app.globalData.wordsList = wordsList
-                  wx.hideLoading();
-                  wx.navigateTo({
-                    url: '/pages/chooseWord/chooseWord',
-                  })
                 }
               })
             }

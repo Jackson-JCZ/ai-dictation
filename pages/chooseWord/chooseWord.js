@@ -35,20 +35,20 @@ Page({
     // var anmiaton = e.currentTarget.dataset.class;
     that.setData({
       animation: 'slide-right',
-      isEdit: this.data.isEdit == false
+      isEdit: !this.data.isEdit
     });
     setTimeout(function () {
       that.setData({
         animation: ''
-      })
-    }, 1000)
+      });
+    }, 1000);
   },
   showModal(e) {
     this.setData({
       modalName: e.currentTarget.dataset.target,
       wordIndex: e.currentTarget.dataset.cur,
       inputWord: this.data.wordsList[e.currentTarget.dataset.cur]
-    })
+    });
     // console.log(this.data.wordIndex)
   },
   hideModal() {
@@ -62,43 +62,43 @@ Page({
     newList.splice(this.data.wordIndex, 1);
     this.setData({
       wordsList: newList
-    })
-    this.hideModal()
+    });
+    this.hideModal();
   },
   inpu(e) {
     this.setData({
       inputWord: e.detail.value
-    })
+    });
   },
   changeWord() {
-    if(this.data.inputWord==''){
+    if (!this.data.inputWord) {
       wx.showToast({
-        title:'请输入单词',
+        title: '请输入单词',
         icon: 'error'
-      })
-    }else{
-    var newList = this.data.wordsList;
-    newList[this.data.wordIndex] = this.data.inputWord;
-    this.setData({
-      wordsList: newList
-    })
-    this.hideModal();
-  }
+      });
+    } else {
+      let newList = this.data.wordsList;
+      newList[this.data.wordIndex] = this.data.inputWord;
+      this.setData({
+        wordsList: newList
+      });
+      this.hideModal();
+    }
   },
-  addWord(){
+  addWord() {
     console.log(this.data.inputWord)
-    if((this.data.inputWord==null)||(this.data.inputWord=='')){
+    if (!this.data.inputWord) {
       wx.showToast({
-        title:'请输入单词',
+        title: '请输入单词',
         icon: 'error'
-      })
-    }else{
-    var newList = this.data.wordsList;
-    newList.unshift(this.data.inputWord)
-    this.setData({
-      wordsList: newList
-    })
-    this.hideModal();
-  }
+      });
+    } else {
+      let newList = this.data.wordsList;
+      newList.unshift(this.data.inputWord);
+      this.setData({
+        wordsList: newList
+      });
+      this.hideModal();
+    }
   }
 })

@@ -1,27 +1,18 @@
 <!--pages/photo/photo.wxml-->
 <camera device-position="back" flash="off" binderror="error" style="width:100%;height:calc(100vh - 230rpx);">
 </camera>
-<image bindtap="takePhoto" src="/icon/shoot.svg"
-  style="width:150rpx;height:150rpx;position:fixed;left:300rpx;bottom:40rpx"></image>
-<text bindtap="chooseImage" class="cuIcon-picfill text-gray"
-  style="font-size:70rpx;position:fixed;right:100rpx;bottom:80rpx"/>
-<text bindtap="back" class="cuIcon-roundclose text-gray" style="font-size:70rpx;position:fixed;left:100rpx;bottom:80rpx"/>
+<image bindtap="takePhoto" src="/icon/shoot.svg" class="icon1"></image>
+<text bindtap="chooseImage" class="cuIcon-picfill text-gray icon2" style="right:100rpx;" />
+<text bindtap="back" class="cuIcon-roundclose text-gray icon2" style="left:100rpx;" />
 
 <view style="width:100%;display:flex;align-items:center;justify-content: center;">
-  <view class="cu-btn round bg-black" style="opacity:{{0.5}};position:absolute;bottom:260rpx;">
+  <view class="cu-btn round bg-black" style="opacity:0.5;position:absolute;bottom:260rpx;">
     <text style="font-size:25rpx">请对准英文单词拍照</text>
   </view>
 </view>
 
-<view
-  style="background-color:white;width:1rpx;height:calc(100vh - 230rpx);position:absolute;left:250rpx;top:0rpx;opacity:{{0.3}};">
-</view>
-<view
-  style="background-color:white;width:1rpx;height:calc(100vh - 230rpx);position:absolute;right:250rpx;top:0rpx;opacity:{{0.3}};">
-</view>
-<view
-  style="background-color:white;width:750rpx;height:1rpx;position:absolute;top:calc((100vh - 230rpx) / 3);opacity:{{0.3}};">
-</view>
-<view
-  style="background-color:white;width:750rpx;height:1rpx;position:absolute;top:calc((200vh - 460rpx) / 3);opacity:{{0.3}};">
-</view>
+<!-- 对齐参考线 -->
+<view class="line" style="height:calc(100vh - 230rpx);left:250rpx;" />
+<view class="line" style="height:calc(100vh - 230rpx);right:250rpx;" />
+<view class="line" style="width:750rpx;top:calc((100vh - 230rpx) / 3);" />
+<view class="line" style="width:750rpx;top:calc((200vh - 460rpx) / 3);" />

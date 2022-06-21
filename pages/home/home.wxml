@@ -4,29 +4,16 @@
 
 
 <view class="cu-bar tabbar bg-white shadow foot">
-  <view class="action navbar__item text-{{curPage=='home'?'blue':'gray'}}" bindtap="navChange" data-cur="home">
-    <view class='cuIcon-home text-bold navbar__icon icon'></view>
-    <view class="cu-avatar sm round avatar -blue shadow"><text class="text-black cuIcon-name text-sm"
-        style="margin-bottom:-85rpx;font-size:20rpx;color:#303030">主页</text></view>
-  </view>
-
-  <view class="action navbar__item text-{{curPage=='found'?'green':'gray'}}" bindtap="navChange" data-cur="found">
-    <view class='cuIcon-rankfill text-bold navbar__icon icon'></view>
-    <view class="cu-avatar sm round avatar -green shadow"><text class="text-balck cuIcon-name text-sm"
-        style="margin-bottom:-85rpx;font-size:20rpx;color:#303030">发现</text></view>
-  </view>
-
-  <view class="action navbar__item text-{{curPage=='my'?'purple':'gray'}}" bindtap="navChange" data-cur="my">
-    <view class='cuIcon-my text-bold navbar__icon icon'></view>
-    <view class="cu-avatar sm round avatar -purple shadow"><text class="text-balck cuIcon-name text-sm"
-        style="margin-bottom:-85rpx;font-size:20rpx;color:#303030">我的</text></view>
+  <view wx:for="{{bar}}" wx:key="index" class="action navbar__item text-{{curPage===index?item['color']:'gray'}}" bindtap="navChange" data-cur="{{index}}">
+    <view class='cuIcon-{{item["icon"]}} text-bold navbar__icon icon' />
+    <view class="cu-avatar sm round avatar -{{item['color']}} shadow">
+      <text class="text-black cuIcon-name text-sm" style="margin-bottom:-85rpx;font-size:20rpx;color:#303030">{{item['name']}}</text>
+    </view>
   </view>
 </view>
 
-<block wx:if="{{curPage==='home'}}">
-  <image
-    src="http://m.qpic.cn/psc?/V53HUzqu1STio82SCfOY2wZWaR1AsHvj/45NBuzDIW489QBoVep5mcWm9fSVgRQOaBNrJ.muEwSH5tWRdwq4P0bbsw.n9KTamOZR.y2ZxDDkqYwehllwtNGdjX3Nr4JUDj3lrewKFmN8!/b&bo=gAJVAYACVQEBGT4!&rf=viewer_4&t=5"
-    style="width:700rpx;height:360rpx;left:25rpx;" />
+<block wx:if="{{curPage === 'home'}}">
+  <image src="http://m.qpic.cn/psc?/V53HUzqu1STio82SCfOY2wZWaR1AsHvj/45NBuzDIW489QBoVep5mcWm9fSVgRQOaBNrJ.muEwSH5tWRdwq4P0bbsw.n9KTamOZR.y2ZxDDkqYwehllwtNGdjX3Nr4JUDj3lrewKFmN8!/b&bo=gAJVAYACVQEBGT4!&rf=viewer_4&t=5" style="width:700rpx;height:360rpx;left:25rpx;" />
 
   <view class="bottom-container" />
   <view class="point" style="position: absolute;top:300rpx;left: 100rpx;" />
@@ -35,8 +22,7 @@
   <view class="wand" style="position: absolute;top:267rpx;right: 106rpx;" />
 
   <view class="card1" bindtap="click1">
-    <view
-      style="background-color:#4d9fff;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
+    <view style="background-color:#4d9fff;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
       <image src="/icon/font.svg" style="width:66rpx;height:66rpx;position:absolute;top:19rpx;left:19rpx;" />
     </view>
     <text style="font-size:35rpx;font-weight:700;position:absolute;top:20rpx;left:150rpx">拍照取词</text>
@@ -45,8 +31,7 @@
   </view>
 
   <view class="card2" bindtap="click2">
-    <view
-      style="background-color:#febc30;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
+    <view style="background-color:#febc30;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
       <image src="/icon/pen.svg" style="width:58rpx;height:58rpx;position:absolute;top:21rpx;left:21rpx;" />
     </view>
     <text style="font-size:35rpx;font-weight:700;position:absolute;top:20rpx;left:150rpx">教材选词</text>
@@ -55,8 +40,7 @@
   </view>
 
   <view class="card3" bindtap="click3">
-    <view
-      style="background-color:#bc9efd;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
+    <view style="background-color:#bc9efd;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
       <image src="/icon/cup.svg" style="width:60rpx;height:60rpx;position:absolute;top:20rpx;left:20rpx;" />
     </view>
     <text style="font-size:35rpx;font-weight:700;position:absolute;top:20rpx;left:150rpx">挑战闯关</text>
@@ -69,10 +53,9 @@
 
   <view style="position:absolute;top:980rpx;left:25rpx;width:700rpx" class="grid col-4 padding-sm">
     <view class="margin-tb-sm text-center" wx:for="{{studyList}}" wx:key="index">
-      <button bindtap="barChange" data-cur="{{index + 1}}"
-        class="cu-btn round {{curBar==index+1?'bg-blue':'line-gray'}}" style="width:150rpx">
+      <button bindtap="barChange" data-cur="{{index + 1}}" class="cu-btn round {{curBar==index+1?'bg-blue':'line-gray'}}" style="width:150rpx">
         <text style="font-size:23rpx">{{item}}</text>
-        </button>
+      </button>
     </view>
   </view>
 </block>

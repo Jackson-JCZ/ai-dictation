@@ -14,8 +14,7 @@
     <text style="position:absolute;top:120rpx;left:35rpx;">这里是单词释义</text>
 
     <view class="edit animation-{{animation==slide?slide:''}}" wx:if="{{isEdit}}">
-      <view style="width:150rpx;height:200rpx;position:absolute;right:0rpx;" bindtap="showModal"
-        data-target="DialogModal" data-cur="{{index}}">
+      <view style="width:150rpx;height:200rpx;position:absolute;right:0rpx;" bindtap="showModal" data-target="DialogModal" data-cur="{{index}}">
         <image src="/icon/delete.svg" style="width:50rpx;height:50rpx;position:absolute;left:50rpx;top:60rpx;"></image>
         <text style="color:#1890FF;position:relative;top:125rpx;">删除</text>
       </view>
@@ -29,7 +28,7 @@
 
 <view style="background-color:white;width:750rpx;height:150rpx;"></view><!-- 占位 -->
 
-<view class="block" style="text-center">
+<view class="block">
   <button class="cu-btn round bg-cyan" style="height:70rpx;width:600rpx;left:75rpx;top:20rpx">开始学习</button>
 </view>
 
@@ -53,7 +52,7 @@
       <view class="content"><text style="font-weight:600;font-size:35rpx;">编辑</text></view>
     </view>
     <view class="padding-lg">
-      <input value="{{wordsList[wordIndex]}}" placeholder="请输入单词" bindinput="inpu"/>
+      <input value="{{wordsList[wordIndex]}}" placeholder="请输入单词" bindinput="inpu" />
     </view>
     <view class="cu-bar bg-white">
       <view class="action margin-0 flex-sub" bindtap="hideModal">取消</view>
@@ -69,7 +68,7 @@
       <view class="content"><text style="font-weight:600;font-size:35rpx;">添加</text></view>
     </view>
     <view class="padding-lg">
-      <input placeholder="请输入单词" value="{{inputWord}}" bindinput="inpu"/>
+      <input placeholder="请输入单词" value="{{inputWord}}" bindinput="inpu" />
     </view>
     <view class="cu-bar bg-white">
       <view class="action margin-0 flex-sub" bindtap="hideModal">取消</view>

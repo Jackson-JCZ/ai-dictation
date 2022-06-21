@@ -3,7 +3,7 @@ const app = getApp();
 Page({
   takePhoto() {
     wx.getSetting({
-      success:(res)=> {
+      success: (res) => {
         //如果没有权限，提示
         if (!res.authSetting['scope.camera']) {
           wx.showModal({
@@ -30,7 +30,7 @@ Page({
           ctx.takePhoto({
             quality: 'high',
             success: (res) => {
-              app.globalData.src=res.tempImagePath
+              app.globalData.src = res.tempImagePath
               wx.navigateTo({
                 url: './photo2/photo2',
               })
@@ -43,21 +43,21 @@ Page({
   error(e) {
     console.log(e.detail)
   },
-  chooseImage: function(type) {
+  chooseImage: function (type) {
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'],
       sourceType: ['album'],
-      success: (res)=> {
+      success: (res) => {
         // 选择图片后的完成确认操作
-        app.globalData.src=res.tempFilePaths[0]
+        app.globalData.src = res.tempFilePaths[0]
         wx.navigateTo({
           url: './photo2/photo2',
         })
       }
     })
   },
-  back(){
+  back() {
     wx.navigateBack({
       delta: 0,
     })

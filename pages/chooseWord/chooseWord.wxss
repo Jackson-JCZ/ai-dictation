@@ -15,7 +15,7 @@ page {
   border-radius: 10rpx;
 }
 
-.block{
+.block {
   position: fixed;
   bottom: 0rpx;
   height: 130rpx;
@@ -23,11 +23,11 @@ page {
   background-color: white;
 }
 
-.edit{
-  background: linear-gradient(to right, rgba(0,0,0,0), white, white);
-  width:500rpx;
+.edit {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), white, white);
+  width: 500rpx;
   height: 200rpx;
   position: absolute;
-  right:0rpx;
+  right: 0rpx;
   border-radius: 10rpx;
 }

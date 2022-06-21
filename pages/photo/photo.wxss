@@ -2,6 +2,29 @@
 @import "/colorui/icon.wxss";
 @import "/colorui/main.wxss";
 
-page{
+page {
   background-color: white;
+}
+
+.line {
+  background-color: white;
+  width: 1rpx;
+  height: 1rpx;
+  position: absolute;
+  top: 0rpx;
+  opacity: 0.3;
+}
+
+.icon1 {
+  width: 150rpx;
+  height: 150rpx;
+  position: fixed;
+  left: 300rpx;
+  bottom: 40rpx;
+}
+
+.icon2 {
+  font-size: 70rpx;
+  position: fixed;
+  bottom: 80rpx;
 }

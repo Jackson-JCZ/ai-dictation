@@ -28,8 +28,7 @@ Page({
     db.collection('grade3_1').where({
       unit: 0
     }).get({
-      success:res=>{
-        console.log(res)
+      success: res => {
         this.setData({
           wordsNum: res.data[0]['wordsNumber']
         })
@@ -82,12 +81,12 @@ Page({
       }
     }
   },
-  click(e){
+  click(e) {
     var unit = e.currentTarget.dataset.cur
     db.collection('grade3_1').where({
       unit: unit + 1
     }).get({
-      success:res=>{
+      success: res => {
         // console.log(res.data[0]['words'])
         app.globalData.wordsList = res.data[0]['words']
         wx.navigateTo({
