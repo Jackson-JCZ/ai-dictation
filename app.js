@@ -4,8 +4,12 @@ App({
 
   },
   globalData: {
-    userInfo: null,
+    userInfo: {
+      nickName: '请先登录',
+      avatarUrl: '/icon/portrait.svg'
+    },
     src: '',
     wordsList: []
-  }
+  },
+  isLogin: false
 })
