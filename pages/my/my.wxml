@@ -3,20 +3,10 @@
   <button hover-class="none" style="background-color:rgb(105,226,208);width:50rpx;height:70rpx;position:absolute;top:20rpx;right:30rpx" open-type="contact" session-from="weapp" />
   <text class="cuIcon-message" style="pointer-events:none;font-size:60rpx;color:white;position:absolute;top:20rpx;right:40rpx" />
   <image src="https://ftp.bmp.ovh/imgs/2019/12/83388a096d28fab7.gif" mode="scaleToFill" class="gif-wave"></image>
-  <!-- <view wx:if="{{isLogin}}">
-    <view style="position:absolute;left:295rpx;top:80rpx;width: 160rpx;height: 160rpx; border-radius: 50%;overflow: hidden;">
-      <open-data type="userAvatarUrl" />
-    </view>
-    <view style="position:absolute;top:250rpx;width:750rpx;text-align:center;">
-      <open-data type="userNickName" style="color:white;font-size:35rpx;"></open-data>
-    </view>
-  </view>
-  <view wx:else> -->
-    <image src="{{userInfo.avatarUrl}}" style="position:absolute;left:295rpx;top:80rpx;width:160rpx;height:160rpx; border-radius: 50%;" bindtap="doLogin" />
+    <image src="{{userInfo.avatarUrl}}" bindtap="doLogin" style="position:absolute;left:295rpx;top:80rpx;width:160rpx;height:160rpx; border-radius: 50%;" bindtap="doLogin" />
     <view style="position:absolute;top:250rpx;width:750rpx;text-align:center;" bindtap="doLogin">
       <text style="color:white;font-size:35rpx;">{{userInfo.nickName}}</text>
     </view>
-  <!-- </view> -->
 </view>
 <!-- <view style="background-color:white;width:750rpx;height:100rpx;position:relative;top:-50rpx;border-radius:50rpx" /> -->
 

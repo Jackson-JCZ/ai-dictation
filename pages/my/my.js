@@ -19,13 +19,16 @@ Component({
   methods: {
     // 第一次登录
     doLogin: async function () {
+      if(this.data.isLogin){
+        return;
+      }
       wx.showLoading({
         title: '登录中',
       });
       const result = await wx.getUserProfile({
         desc: "获取用户信息"
       }).catch(e => {});
-      console.log(result)
+      // console.log(result)
       if (!result) {
         wx.showToast({
           title: '授权失败',
@@ -38,6 +41,7 @@ Component({
         avatarUrl
       } = result.userInfo;
       this.setData({
+        isLogin: true,
         userInfo: {
           nickName,
           avatarUrl
@@ -45,16 +49,25 @@ Component({
       });
       app.globalData.isLogin = true;
       app.globalData.userInfo = this.data.userInfo;
-      wx.showToast({
-        title: '登录成功',
-        icon: "none"
-      });
+
+      // 获取用户头像base64编码
+      const {
+        "result": {
+          avatarCode
+        }
+      } = await wx.cloud.callFunction({
+        name: 'urlToBase64',
+        data: {
+          avatarUrl: avatarUrl
+        }
+      })
+      console.log(avatarCode)
 
       // 存入数据库
-      // 存储用户昵称
       db.collection('userInfo').add({
         data: {
-          nickName: nickName
+          nickName,
+          avatarCode
         },
         success: function () {
           console.log('success')
@@ -63,16 +76,12 @@ Component({
           console.log(e)
         }
       })
-      console.log('ava', avatarUrl)
-      // 存储用户头像
-      await wx.cloud.callFunction({
-        name: 'loginRequest',
-        data: {
-          avatarUrl: avatarUrl,
-          openId: this.data.openId
-        }
-      })
-      wx.hideLoading()
+
+      wx.hideLoading();
+      wx.showToast({
+        title: '登录成功',
+        icon: "none"
+      });
     },
   },
   lifetimes: {
@@ -101,18 +110,13 @@ Component({
           // 登录成功
           const {
             nickName,
-            fileID
+            avatarCode
           } = res2.data[0];
-          // 获取临时链接
-          const res3 = await wx.cloud.getTempFileURL({
-            fileList: [fileID]
-          })
-          const avatarUrl = res3.fileList[0].tempFileURL;
           this.setData({
             isLogin: true,
             userInfo: {
-              avatarUrl: avatarUrl,
-              nickName: nickName
+              nickName: nickName,
+              avatarUrl: avatarCode
             },
           });
           app.globalData.isLogin = true;
