@@ -1,8 +1,29 @@
 <!--pages/found/found.wxml-->
 <scroll-view scroll-x class="bg-white nav">
-  <view class="flex text-center">
-    <view class="cu-item flex-sub {{index==TabCur?'text-green cur':''}}" wx:for="{{3}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
-      {{TabIndex[index]}}
-    </view>
+  <view class="flex text-center foundPage">
+    <view class="foundTab">
+      <view class="cu-item flex-sub {{index==TabCur?'text-green cur':''}}" wx:for="{{3}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+        {{TabIndex[index]}}
+      </view>
+  </view>
+    <block wx:for="{{lastdayIncome}}" wx:for-index="key">
+      <view class="rank">
+        <view class="number">
+          <image wx:if="{{key == 0}}" class="img" src="../../images/first.png"></image>
+          <image wx:if="{{key == 1}}" class="img" src="../../images/second.png"></image>
+          <image wx:if="{{key == 2}}" class="img" src="../../images/third.png"></image>
+          <text wx:if="{{key > 2}}" class="rankindex">{{key+1}} </text>
+          <image class="headPhone" src='{{item.headPhone}}'></image>
+          <text>{{item.name}}</text>
+        </view>
+        
+        <view class="star">
+          <image class="img" src="../../images/星星.png"></image>
+          <text>{{item.total}}个</text>
+        </view>
+        
+      </view>
+    </block>
+
   </view>
 </scroll-view>
