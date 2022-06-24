@@ -1,4 +1,17 @@
-/* pages/select/select.wxss */
+/* pages/home/select/select.wxss */
+
+.cover {
+  height: 220rpx;
+  width: 150rpx;
+  position: absolute;
+  left: 30rpx;
+  top: 0rpx;
+}
+
+.text1 {
+  position: absolute;
+  left: 230rpx;
+}
 
 .VerticalNav.nav {
   width: 200rpx;

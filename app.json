@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/home/challenge/challenge",
+    "pages/home/select/select",
     "pages/found/found",
     "pages/my/my",
     "pages/photo/photo",
-    "pages/select/select",
-    "pages/challenge/challenge",
     "pages/photo/photo2/photo2",
     "pages/chooseWord/chooseWord"
   ],

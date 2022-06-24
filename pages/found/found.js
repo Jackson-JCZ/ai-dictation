@@ -1,10 +1,9 @@
 Component({
   data: {
     TabCur: 0,
-    scrollLeft:0,
-    TabIndex:['排行榜','记笔顺','语法站'],
-    lastdayIncome: [
-      {
+    scrollLeft: 0,
+    TabIndex: ['排行榜', '记笔顺', '语法站'],
+    lastdayIncome: [{
         name: '小明',
         headPhone: '../../images/头像1.png',
         total: 524
@@ -29,7 +28,7 @@ Component({
         headPhone: '../../images/头像1.png',
         total: 100
       }
-      
+
     ]
   },
   methods: {

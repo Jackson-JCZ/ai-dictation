@@ -2,6 +2,10 @@
 @import "/colorui/icon.wxss";
 @import "/colorui/main.wxss";
 
+page{
+  background-color: white;
+}
+
 .img {
   width: 1.5rem;
   height: 1.5rem;

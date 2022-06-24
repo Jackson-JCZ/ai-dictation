@@ -1,0 +1,31 @@
+<!--pages/home/select/select.wxml-->
+<view class="VerticalBox">
+  <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="width:250rpx;">
+    <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{data}}" wx:key="index" bindtap='tabSelect' data-id="{{index}}">
+      <text style="font-size:26rpx">{{item.text}}</text>
+    </view>
+  </scroll-view>
+  <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:100vh" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+    <view class="padding-top padding-lr" wx:for="{{data}}" wx:key="index" id="main-{{index}}">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='cuIcon-title text-green' />
+          {{item.text}}
+        </view>
+      </view>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item" style="height:250rpx;" wx:for="{{item.unit}}" wx:for-item="item2" wx:for-index="index2" wx:key="index2"
+        bindtap="click" data-book="{{item.name}}" data-unitIndex="{{index2}}">
+          <image class="cover" src="{{item.cover}}">
+          </image>
+          <text class="text1" style="top:30rpx;font-size:30rpx">{{index2}}</text>
+          <text class="text-bold text-gray text1" style="top:80rpx;font-size:25rpx;">{{item2.title}}</text>
+          <view class="cu-btn round line-gray text1" style="top:170rpx;width:220rpx;height:45rpx">
+            <text style="font-size:23rpx" space="ensp">单词数 {{item2.wordsNum}}</text>
+          </view>
+          <text class="cuIcon-roundrightfill text-blue" style="position:absolute;right:30rpx;top:25rpx;font-size:40rpx" />
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

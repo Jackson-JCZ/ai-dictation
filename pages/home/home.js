@@ -34,12 +34,12 @@ Page({
   },
   click2() {
     wx.navigateTo({
-      url: '/pages/select/select',
+      url: './select/select',
     });
   },
   click3() {
     wx.navigateTo({
-      url: '/pages/challenge/challenge',
+      url: './challenge/challenge',
     });
   },
   barChange(e) {
