@@ -7,6 +7,5 @@ App({
     isLogin: false,
     src: '',
     wordsList: []
-  },
-  isLogin: false
+  }
 })

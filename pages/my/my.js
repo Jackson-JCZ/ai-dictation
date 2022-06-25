@@ -19,7 +19,7 @@ Component({
   methods: {
     // 第一次登录
     doLogin: async function () {
-      if(this.data.isLogin){
+      if (this.data.isLogin) {
         return;
       }
       wx.showLoading({
@@ -47,8 +47,17 @@ Component({
           avatarUrl
         }
       });
+      // 获取openId
+      const {
+        'result': {
+          openId
+        }
+      } = await wx.cloud.callFunction({
+        name: 'loginRequest'
+      })
       app.globalData.isLogin = true;
       app.globalData.userInfo = this.data.userInfo;
+      app.globalData.openId = openId;
 
       // 获取用户头像base64编码
       const {
@@ -121,6 +130,7 @@ Component({
           });
           app.globalData.isLogin = true;
           app.globalData.userInfo = this.data.userInfo;
+          app.globalData.openId = openId;
           wx.hideLoading();
         } else {
           wx.hideLoading();

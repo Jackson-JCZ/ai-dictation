@@ -5,9 +5,9 @@
     "pages/home/select/select",
     "pages/found/found",
     "pages/my/my",
+    "pages/chooseWord/chooseWord",
     "pages/photo/photo",
-    "pages/photo/photo2/photo2",
-    "pages/chooseWord/chooseWord"
+    "pages/photo/photo2/photo2"
   ],
   "window": {
     "backgroundTextStyle": "light",
