@@ -1,7 +1,4 @@
 // 云函数入口文件
-// const cloud = require('wx-server-sdk')
-// cloud.init();
-// const db = cloud.database();
 const request = require('request-promise');
 
 // 云函数入口函数
