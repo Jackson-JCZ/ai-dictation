@@ -6,24 +6,35 @@
         {{TabIndex[index]}}
       </view>
   </view>
-    <block wx:for="{{lastdayIncome}}" wx:for-index="key">
+    <block wx:for="{{historyAccord}}" wx:for-index="key">
       <view class="rank">
         <view class="number">
           <image wx:if="{{key == 0}}" class="img" src="../../images/first.png"></image>
           <image wx:if="{{key == 1}}" class="img" src="../../images/second.png"></image>
           <image wx:if="{{key == 2}}" class="img" src="../../images/third.png"></image>
           <text wx:if="{{key > 2}}" class="rankindex">{{key+1}} </text>
-          <image class="headPhone" src='{{item.headPhone}}'></image>
-          <text>{{item.name}}</text>
+          <image class="headPhone" src='{{item.avatarCode == "none" ? "../../images/头像1.png": item.avatarCode}}'></image>
+          <text>{{item.nickName}}</text>
         </view>
         
         <view class="star">
           <image class="img" src="../../images/星星.png"></image>
-          <text>{{item.total}}个</text>
+          <text>{{item.starTotal}}个</text>
         </view>
         
       </view>
     </block>
-
+    <view class="self-rank">
+        <view class="number">
+          <text>{{yourIndex}}</text>
+          <image class="headPhone" src='{{userInfo.avatarUrl}}'></image>
+          <text>我</text>
+        </view>
+        
+        <view class="star">
+          <image class="img" src="../../images/星星.png"></image>
+          <text>{{starTotal}}个</text>
+        </view>
+      </view>
   </view>
 </scroll-view>

@@ -8,5 +8,4 @@ App({
     src: '',
     wordsList: []
   },
-  isLogin: false
 })

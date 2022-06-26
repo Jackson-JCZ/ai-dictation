@@ -19,7 +19,7 @@ Component({
   methods: {
     // 第一次登录
     doLogin: async function () {
-      if(this.data.isLogin){
+      if (this.data.isLogin) {
         return;
       }
       wx.showLoading({
@@ -47,8 +47,17 @@ Component({
           avatarUrl
         }
       });
+      // 获取openId
+      const {
+        'result': {
+          openId
+        }
+      } = await wx.cloud.callFunction({
+        name: 'loginRequest'
+      })
       app.globalData.isLogin = true;
       app.globalData.userInfo = this.data.userInfo;
+      app.globalData.openId = openId;
 
       // 获取用户头像base64编码
       const {
@@ -106,11 +115,13 @@ Component({
         const res2 = await db.collection('userInfo').where({
           _openid: openId
         }).get();
+        console.log('RES2', res2)
         if (res2.data.length) {
           // 登录成功
           const {
             nickName,
-            avatarCode
+            avatarCode,
+            starTotal
           } = res2.data[0];
           this.setData({
             isLogin: true,
@@ -121,6 +132,8 @@ Component({
           });
           app.globalData.isLogin = true;
           app.globalData.userInfo = this.data.userInfo;
+          app.globalData.openId = openId;
+          app.globalData.starTotal = starTotal;
           wx.hideLoading();
         } else {
           wx.hideLoading();

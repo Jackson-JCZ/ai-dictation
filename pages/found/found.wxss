@@ -14,7 +14,12 @@ page{
   width: 3rem;
   height: 3rem;
   margin-right: 1rem;
+  border-radius: 50%;
 }
+.self-rank .headPhone {
+  margin-left: 1rem;
+}
+
 .rank {
   height: 5rem;
   margin: 0 0.5rem;
@@ -22,6 +27,25 @@ page{
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+}
+.self-rank {
+  position: fixed;
+  bottom: 99rpx;
+  width: 100%;
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border-top-left-radius: 48rpx;
+  border-top-right-radius: 48rpx;
+  box-shadow: 0 4rpx 12rpx 0 rgba(0, 0, 0, 0.38);
+  background-color: #ffffff;
+  font-weight: bold;
+  color: black;
+}
+.self-rank .number, .self-rank .star {
+    margin: 0 1rem;
 }
 .number {
   display: flex;
