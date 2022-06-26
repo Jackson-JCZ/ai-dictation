@@ -10,10 +10,11 @@ exports.main = async (event, context) => {
     pList = [];
   const appKey = '16fed0079a53d0f8';
   const key = 'CgyiG7H24dP0JiQPzMSeFNhBt8aG6O57';
-  for (let word of event.wordsList) {
+
+  const getRequest = function (word, appKey, key) {
     const salt = new Date().getTime();
     const curtime = Math.round(salt / 1000);
-    pList.push(axios.get('https://openapi.youdao.com/api', {
+    return axios.get('https://openapi.youdao.com/api', {
       params: {
         q: word,
         from: 'en',
@@ -24,11 +25,17 @@ exports.main = async (event, context) => {
         signType: 'v3',
         curtime: curtime
       }
-    }).catch(console.error));
+    }).catch(console.error);
+  }
+
+  for (let word of event.wordsList) {
+    pList.push(getRequest(word, appKey, key));
   }
   const res = await Promise.all(pList);
-  for (let item of res) {
-    if (item.status === 200 && item.data.errorCode === '0') {
+  // 最大请求次数3
+  var retry = 3;
+  for (let i = 0; i < res.length; i++) {
+    if (res[i] && res[i].status === 200 && res[i].data.errorCode === '0' && res[i].data.isWord) {
       const {
         'data': {
           'basic': {
@@ -36,7 +43,7 @@ exports.main = async (event, context) => {
             'uk-phonetic': phonetic
           }
         }
-      } = item;
+      } = res[i];
 
       // 裁切太长的翻译
       for (let i = 0; i < explains.length; i++) {
@@ -55,7 +62,15 @@ exports.main = async (event, context) => {
         phonetic
       });
     } else {
-      result.push({});
+      // 重新请求，最多请求3次
+      if (retry > 0) {
+        res[i] = await getRequest(event.wordsList[i], appKey, key);
+        i--;
+        retry--;
+      } else {
+        result.push({});
+        retry = 3;
+      }
     }
   }
   return result;
