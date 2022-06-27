@@ -3,6 +3,7 @@ Page({
   data: {
     curPage: "home",
     curBar: '1',
+    scienceInfo: null,
     bar: {
       "home": {
         color: "blue",
@@ -47,4 +48,18 @@ Page({
       curBar: e.currentTarget.dataset.cur
     });
   },
+  onShow() {
+    const scienceUrl = 'https://www.zhihu.com/api/v4/topics/21853257'
+    const context = this
+    wx.request({
+      url: scienceUrl,
+      method: 'GET',
+      success(res) {
+        console.log(res.data)
+        context.setData({
+          scienceInfo: res.data
+        })
+      }
+    })
+  }
 })
