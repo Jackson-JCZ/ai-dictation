@@ -7,6 +7,27 @@
           "pathName": "pages/found/found",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "个人信息",
+          "pathName": "pages/about/personalData/personalData",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "学习记录",
+          "pathName": "pages/about/studyLog/studyLog",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "关于我们",
+          "pathName": "pages/about/developer/developer",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
