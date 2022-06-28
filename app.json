@@ -9,7 +9,10 @@
     "pages/chooseWord/dictation/dictation",
     "pages/chooseWord/dictation/complete/complete",
     "pages/photo/photo",
-    "pages/photo/photo2/photo2"
+    "pages/photo/photo2/photo2",
+    "pages/about/personalData/personalData",
+    "pages/about/studyLog/studyLog",
+    "pages/about/developer/developer"
   ],
   "window": {
     "backgroundTextStyle": "light",

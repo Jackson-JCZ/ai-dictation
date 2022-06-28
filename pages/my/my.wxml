@@ -12,13 +12,13 @@
 
 <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow bg-white radius">
   <view class="cu-item arrow">
-    <navigator class="content" url="/pages/about/log/log" hover-class="none">
+    <navigator class="content" url="/pages/about/personalData/personalData" hover-class="none">
       <text class="cuIcon-formfill text-cyan"></text>
       <text class="text-grey">个人信息</text>
     </navigator>
   </view>
   <view class="cu-item arrow">
-    <navigator class="content" url="/pages/about/log/log" hover-class="none">
+    <navigator class="content" url="/pages/about/studyLog/studyLog" hover-class="none">
       <text class="cuIcon-writefill text-brown"></text>
       <text class="text-grey">学习记录</text>
     </navigator>
@@ -36,7 +36,7 @@
     </navigator>
   </view>
   <view class="cu-item arrow">
-    <navigator class="content" url="/pages/about/log/log" hover-class="none">
+    <navigator class="content" url="/pages/about/developer/developer" hover-class="none">
       <text class="cuIcon-peoplefill text-green"></text>
       <text class="text-grey">关于我们</text>
     </navigator>

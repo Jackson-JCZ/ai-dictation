@@ -7,9 +7,33 @@
           "pathName": "pages/found/found",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "个人信息",
+          "pathName": "pages/about/personalData/personalData",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "学习记录",
+          "pathName": "pages/about/studyLog/studyLog",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "关于我们",
+          "pathName": "pages/about/developer/developer",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
   },
-  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "setting": {
+    "urlCheck": false
+  }
 }
