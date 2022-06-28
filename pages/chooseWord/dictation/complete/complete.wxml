@@ -1,2 +1,38 @@
 <!--pages/chooseWord/dictation/complete/complete.wxml-->
-<text>学习完成</text>
+
+<!-- <view class="hover">
+  <view class="margin-top-xl">恭喜你学习完成啦!</view>
+  <view class="text1">本次已学习 个单词</view>
+  <view class="text2">快分享给你的好朋友们看看吧！</view>
+  <view class="text3"><text class="cuIcon-refresharrow" /></view>
+  <view class="share bg-blue"><text class="cuIcon-share" /></view>
+</view> -->
+
+<view class="background">
+  <view class="text1">本次学习已完成</view>
+  <image class="image1" src="/images/firework.svg"></image>
+  <view class="text2">本次共学习{{wordsList.length}}个单词</view>
+</view>
+<!-- <image style="width: 100vw;height: 450rpx;" src="/images/boy-going-to-the-school.svg" /> -->
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-green" /> 已学单词
+  </view>
+</view>
+
+<scroll-view scroll-y="true" style="height: calc(70vh - 300rpx);">
+  <view class="cu-list menu sm-bordercard-menu margin-top">
+    <view class="cu-item" wx:for="{{wordsList}}" wx:key="index">
+      <view class="content">
+        <text class="text-grey margin-left-lg">{{item}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+
+<view class="hover">
+  <button class="cu-btn bg-gray" open-type="share" style="width: 300rpx;height: 80rpx;">分享一下</button>
+  <button class="cu-btn bg-gray" bindtap="back" style="width: 300rpx;height: 80rpx;">再学一些</button>
+</view>

@@ -1,1 +1,38 @@
 /* pages/chooseWord/dictation/complete/complete.wxss */
+page {
+  background-color: #fff;
+}
+
+.background {
+  background-color: rgb(245, 246, 248);
+  height: 30vh;
+  position: relative;
+}
+
+.text1{
+  font-size: 50rpx;
+  font-weight: bold;
+  padding-top: 8vh;
+  margin-left: 40rpx;
+}
+
+.text2{
+  color: #aaa;
+  margin-left: 40rpx;
+  margin-top: 40rpx;
+}
+
+.image1{
+  position: absolute;
+  bottom: -50rpx;
+  right: 70rpx;
+  width: 250rpx;
+}
+
+.hover{
+  display: flex;
+  position: absolute;
+  width: 750rpx;
+  bottom: 50rpx;
+  justify-content: space-around;
+}
