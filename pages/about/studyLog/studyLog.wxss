@@ -1,1 +1,17 @@
-/* pages/about/studyLog/studyLog.wxss */
+.study-num {
+  width: 100%;
+  height: 100px; 
+  z-index: 0;
+}
+
+.cu-timeline>.cu-item:not([class*="cuIcon-"])::before {
+  color: #09d0b2;
+}
+
+.content {
+  white-space: nowrap;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  color: black;
+}

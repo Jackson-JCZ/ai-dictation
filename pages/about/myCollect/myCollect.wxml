@@ -1,0 +1,5 @@
+
+<view class="flex justify-center align-center flex-direction">
+  <image src="../../../icon/flour.svg" class="svg-size"></image>
+  <view class="text-grey">暂无收藏记录~</view>
+</view>

@@ -24,13 +24,13 @@
     </navigator>
   </view>
   <view class="cu-item arrow">
-    <navigator class="content" url="/pages/about/log/log" hover-class="none">
+    <navigator class="content" url="/pages/about/myCollect/myCollect" hover-class="none">
       <text class="cuIcon-favorfill text-red"></text>
       <text class="text-grey">我的收藏</text>
     </navigator>
   </view>
   <view class="cu-item arrow">
-    <navigator class="content" url="/pages/about/log/log" hover-class="none">
+    <navigator class="content" url="/pages/about/punchCard/punchCard" hover-class="none">
       <text class="cuIcon-squarecheckfill text-orange"></text>
       <text class="text-grey">我的打卡</text>
     </navigator>

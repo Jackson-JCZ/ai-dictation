@@ -1,2 +1,22 @@
-<!--pages/about/studyLog/studyLog.wxml-->
-<text>pages/about/studyLog/studyLog.wxml</text>
+<view class="bg-cyan light">
+  <view class="study-num flex justify-center align-center text-bold text-cycan text-xxl">
+    <text>今日已学习</text>
+    <text class="text-sl" decode="{{true}}">&nbsp;50&nbsp;</text>
+    <text> 个单词</text>
+  </view>
+  
+</view>
+
+<view class="cu-timeline">
+  <block wx:for="{{history}}" wx:key="index">
+    <view class="cu-time ">{{item.date}}</view>
+    <view class="cu-item radius">
+      <block wx:for="{{item.words}}" wx:key="index">
+        <view class="content bg-cyan">
+          {{item}}
+       </view>
+      </block>
+    </view>
+  </block>
+  
+</view>
