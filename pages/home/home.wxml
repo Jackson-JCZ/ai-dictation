@@ -12,7 +12,7 @@
   </view>
 </view>
 
-<scroll-view scroll-y class="scrollPage">
+<!-- <scroll-view scroll-y class="scrollPage"> -->
   <block wx:if="{{curPage === 'home'}}">
     <image src="http://m.qpic.cn/psc?/V53HUzqu1STio82SCfOY2wZWaR1AsHvj/45NBuzDIW489QBoVep5mcWm9fSVgRQOaBNrJ.muEwSH5tWRdwq4P0bbsw.n9KTamOZR.y2ZxDDkqYwehllwtNGdjX3Nr4JUDj3lrewKFmN8!/b&bo=gAJVAYACVQEBGT4!&rf=viewer_4&t=5" style="width:700rpx;height:360rpx;left:25rpx;" />
 
@@ -71,4 +71,4 @@
       </view>
     </block>
   </block>
-</scroll-view>
+<!-- </scroll-view> -->

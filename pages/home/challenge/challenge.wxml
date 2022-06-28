@@ -1,2 +1,31 @@
 <!--pages/challenge/challenge.wxml-->
-<text>pages/challenge/challenge.wxml</text>
+<view >
+  <view class="bg">
+    <image src="../../../images/bg_challenge.png" class="img1" alt="背景1"><image src="../../../images/bg_chanllenge2.png" class="img2" alt="背景2"></image></image>
+  </view>
+  <view class="bg-white card padding-sm">
+    <view class="margin-lr-sm margin-top-lg">
+      <view class="text-bold text-xl margin-bottom-sm rule"> 挑战规则</view>
+      <text class="text-grey text-bold">点击开始答题后，在空格中填入你所听到的单词，如果作答正确，系统会自动跳转到下一题，也可以选择跳过进入下一题</text>
+    </view>
+
+    <view class="margin-lr-sm margin-top-lg">
+      <view class="text-bold text-xl margin-bottom-sm level"> 挑战等级</view>
+      <view class="grid col-3 padding-lg">
+        <view class="margin-tb-sm text-center" wx:for="{{changeLevel}}" wx:key="index">
+          <button bindtap="barChange" data-cur="{{index + 1}}" class="cu-btn radius {{curBar==index+1?'bg-cyan':'line-gray'}}" style="width:150rpx">
+            <text style="font-size:23rpx">{{item}}</text>
+          </button>
+        </view>
+      </view>
+    </view>
+    <view class="padding flex flex-direction">
+      <button class="cu-btn bg-cyan round challenge-btn" bindtap="challengrBegin">挑战开始</button>
+    </view>
+  </view>
+
+  
+  
+  
+
+</view>

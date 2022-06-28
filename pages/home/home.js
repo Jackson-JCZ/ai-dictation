@@ -55,7 +55,6 @@ Page({
       url: scienceUrl,
       method: 'GET',
       success(res) {
-        console.log(res.data)
         context.setData({
           scienceInfo: res.data
         })

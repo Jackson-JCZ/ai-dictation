@@ -39,6 +39,7 @@ Page({
       wordsList: app.globalData.wordsList,
       wordsData
     })
+    
     // console.log(JSON.stringify(wordsData.result));
     wx.hideLoading();
   },
@@ -189,5 +190,7 @@ Page({
     wx.navigateTo({
       url: './dictation/dictation',
     })
+    console.log('List', app.globalData.wordsList)
+    console.log('data', app.globalData.wordsData)
   }
 })

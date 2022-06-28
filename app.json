@@ -13,7 +13,8 @@
     "pages/about/personalData/personalData",
     "pages/about/studyLog/studyLog",
     "pages/about/developer/developer",
-    "pages/about/punchCard/punchCard"
+    "pages/about/punchCard/punchCard",
+    "pages/about/myCollect/myCollect"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -35,6 +35,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "我的收藏",
+          "pathName": "pages/about/myCollect/myCollect",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "挑战闯关",
+          "pathName": "pages/home/challenge/challenge",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
