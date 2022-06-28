@@ -10,7 +10,8 @@
     "pages/photo/photo2/photo2",
     "pages/about/personalData/personalData",
     "pages/about/studyLog/studyLog",
-    "pages/about/developer/developer"
+    "pages/about/developer/developer",
+    "pages/about/punchCard/punchCard"
   ],
   "window": {
     "backgroundTextStyle": "light",

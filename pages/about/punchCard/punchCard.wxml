@@ -1,0 +1,31 @@
+<calendar></calendar>
+<view class="margin-lr-lg center margin-top-xs">
+  <view class="text-black text-lg text-bold margin-bottom-sm">打卡动态</view>
+  <view class="punch-card radius shadow bg-white">
+    <view class="flex padding-sm justify-between solid-bottom solid-bottom margin-top">
+      <view>
+        <view class="text-black text-lg margin-bottom-sm">今日打卡</view>
+        <view class="month-tip"><text>「本月第 {{accumulateDays}} 天」</text> <text>{{todayFinishTime}}</text></view>
+      </view>
+      <text class="cuIcon-emoji lg text-yellow"></text>
+    </view>
+    <view>
+    <view class="padding-tb-sm">
+      <block wx:for="{{historyPunch}}" wx:key="index" class="margin-bottom-sm">
+        <view class="history-log flex justify-between padding-lr-sm margin-tb-lg text-bold">
+          <view class="date">{{item}}打卡</view>
+          <text class="cu-tag round bg-orange light text-grey">获得1金币</text>
+        </view>
+      </block>
+      <view class="solid-bottom margin-top"></view>
+    </view>
+    
+    <view class="flex justify-center padding-sm" bindtap="punch">
+      <text class="cuIcon-favorfill text-yellow lg"></text>
+      <text class="text-bold text-lg margin-xs">获取今日打卡海报</text>
+
+    </view>
+    </view>
+</view>
+
+</view>

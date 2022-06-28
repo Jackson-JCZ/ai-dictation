@@ -28,6 +28,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "打卡记录",
+          "pathName": "pages/about/punchCard/punchCard",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
