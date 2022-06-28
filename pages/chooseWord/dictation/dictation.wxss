@@ -1,0 +1,117 @@
+/* pages/chooseWord/dictation/dictation.wxss */
+page {
+  background-color: #efeeee;
+}
+
+.shadow{
+  width: 750rpx;
+  height: 1px;
+  box-shadow: 6rpx 6rpx 23rpx rgba(0, 0, 0, 0.3);
+}
+
+.hover2 {
+  position: absolute;
+  top: 30rpx;
+}
+
+.hover {
+  margin-top: 400rpx;
+}
+
+.line {
+  display: flex;
+  width: 750rpx;
+  justify-content: center;
+}
+
+.cell {
+  background-color: #f5f5f5;
+  font-size: 60rpx;
+  width: 60rpx;
+  height: 70rpx;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  margin: 20rpx 8rpx;
+  font-weight: 900;
+  box-shadow: 6rpx 6rpx 23rpx rgba(0, 0, 0, 0.2),
+    -6rpx -6rpx 15rpx #fff;
+  border-radius: 10rpx;
+  position: relative;
+}
+
+.blank {
+  margin: 15rpx;
+}
+
+.cursor {
+  position: absolute;
+  width: 1px;
+  height: 44rpx;
+  background-color: black;
+  top: 13rpx;
+  left: calc(30rpx - 1px);
+  animation: flash 2s ease-out infinite;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.phonetic {
+  position: absolute;
+  top: 300rpx;
+  font-size: large;
+  text-align: center;
+  width: 750rpx;
+}
+
+.explains {
+  margin: 100rpx auto;
+  text-align: center;
+  font-size: medium;
+  width: 600rpx;
+}
+
+.ok {
+  background-color: #f5f5f5;
+  border-radius: 50rpx;
+  box-shadow: 12rpx 12rpx 23rpx rgba(0, 0, 0, 0.2),
+    -12rpx -12rpx 15rpx #fff;
+  position: absolute;
+  bottom: 50rpx;
+  left: 50rpx;
+  font-size: large;
+  font-weight: 600;
+  color: #666;
+}
+
+.hover3 {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hover4 {
+  width: 300rpx;
+  height: 300rpx;
+  background-color: white;
+  margin: 400rpx auto;
+  border-radius: 50rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

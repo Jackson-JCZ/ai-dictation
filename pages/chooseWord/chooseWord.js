@@ -182,5 +182,12 @@ Page({
   },
   speek(e) {
     this.audioCtx.src = 'http://dict.youdao.com/dictvoice?type=0&audio=' + e.currentTarget.dataset.word;
+  },
+  startStudy(){
+    app.globalData.wordsList = this.data.wordsList;
+    app.globalData.wordsData = this.data.wordsData;
+    wx.navigateTo({
+      url: './dictation/dictation',
+    })
   }
 })

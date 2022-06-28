@@ -6,6 +6,8 @@
     "pages/found/found",
     "pages/my/my",
     "pages/chooseWord/chooseWord",
+    "pages/chooseWord/dictation/dictation",
+    "pages/chooseWord/dictation/complete/complete",
     "pages/photo/photo",
     "pages/photo/photo2/photo2",
     "pages/about/personalData/personalData",
@@ -21,5 +23,6 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "cloud": true
+  "cloud": true,
+  "lazyCodeLoading": "requiredComponents"
 }
