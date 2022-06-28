@@ -42,7 +42,7 @@
 <view style="background-color:white;width:750rpx;height:150rpx;"></view>
 
 <view class="block">
-  <button class="cu-btn round bg-cyan" style="height:70rpx;width:600rpx;left:75rpx;top:20rpx">开始学习</button>
+  <button bindtap="startStudy" class="cu-btn round bg-cyan" style="height:70rpx;width:600rpx;left:75rpx;top:20rpx">开始学习</button>
 </view>
 
 <!-- 删除 -->

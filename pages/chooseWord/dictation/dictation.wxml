@@ -1,0 +1,57 @@
+<!--pages/chooseWord/dictation/dictation.wxml-->
+<!-- 阴影 -->
+<view class="shadow" />
+
+<!-- 提示 -->
+<view class="hover2" style="left:50rpx;" bindtap="{{showAnswer?'':'tip'}}">
+  <text class="cuIcon-creative text-yellow text-sl text-shadow" />
+</view>
+
+<!-- 音频播放 -->
+<view class="hover2" style="right: 50rpx;" bindtap="play">
+  <text class="cuIcon-notification text-green text-sl text-shadow" />
+</view>
+
+<view class="phonetic" wx:if="{{showPhonetic}}">
+  /{{phonetic}}/
+</view>
+
+<view class="hover">
+  <view wx:for="{{wordList}}" wx:key="index" class="line" bindtap="{{showAnswer?'':'startInput'}}">
+    <view class="{{str!==' '?'cell':'blank'}}" wx:for="{{item}}" wx:for-item="str" wx:for-index="index2" wx:key="index2">
+      {{inputWord[index][index2]?inputWord[index][index2]:''}}
+      <view wx:if="{{str!==' '&&inputIndex[0]===index&&inputIndex[1]===index2&&inputFocus}}" class="cursor"></view>
+    </view>
+  </view>
+</view>
+<input type="text" bindinput="inputWord" bindblur="endInput" focus="{{inputFocus}}" style="position: absolute;top:-100rpx" />
+
+<view class="explains" wx:if="{{showExplains}}">
+  <view wx:for="{{explains}}" wx:key="index">
+    {{item}}
+  </view>
+</view>
+
+<button class="cu-btn ok" bindtap="submit" style="width: 650rpx;height: 100rpx;">
+  <text>OK</text>
+</button>
+
+<view class="hover3" wx:if="{{showRight}}">
+  <view class="hover4">
+  <text class="cuIcon-roundcheck text-green text-xsl" />
+  <text class="text-lg margin-sm">恭喜你答对了!</text>
+  </view>
+</view>
+
+<!-- 查看答案 -->
+<view class="cu-modal {{showAnswerModal?'show':''}}">
+  <view class="cu-dialog">
+    <view class="padding-xl bg-white">
+      <text style="font-weight:600;font-size:35rpx;">确定要查看答案吗？</text>
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub text-green" bindtap="hideModal">取消</view>
+      <view class="action margin-0 flex-sub solid-left" bindtap="clickAnswer">确定</view>
+    </view>
+  </view>
+</view>
