@@ -13,95 +13,95 @@
 </view>
 
 <!-- <scroll-view scroll-y class="scrollPage"> -->
-  <block wx:if="{{curPage === 'home'}}">
-    <image src="http://m.qpic.cn/psc?/V53HUzqu1STio82SCfOY2wZWaR1AsHvj/45NBuzDIW489QBoVep5mcWm9fSVgRQOaBNrJ.muEwSH5tWRdwq4P0bbsw.n9KTamOZR.y2ZxDDkqYwehllwtNGdjX3Nr4JUDj3lrewKFmN8!/b&bo=gAJVAYACVQEBGT4!&rf=viewer_4&t=5" style="width:700rpx;height:360rpx;left:25rpx;" />
+<block wx:if="{{curPage === 'home'}}">
+  <image src="http://m.qpic.cn/psc?/V53HUzqu1STio82SCfOY2wZWaR1AsHvj/45NBuzDIW489QBoVep5mcWm9fSVgRQOaBNrJ.muEwSH5tWRdwq4P0bbsw.n9KTamOZR.y2ZxDDkqYwehllwtNGdjX3Nr4JUDj3lrewKFmN8!/b&bo=gAJVAYACVQEBGT4!&rf=viewer_4&t=5" style="width:700rpx;height:360rpx;left:25rpx;" />
 
-    <view class="bottom-container" />
-    <view class="point" style="position: absolute;top:300rpx;left: 100rpx;" />
-    <view class="wand" style="position: absolute;top:267rpx;left: 106rpx;" />
-    <view class="point" style="position: absolute;top:300rpx;right: 100rpx;" />
-    <view class="wand" style="position: absolute;top:267rpx;right: 106rpx;" />
+  <view class="bottom-container" />
+  <view class="point" style="position: absolute;top:300rpx;left: 100rpx;" />
+  <view class="wand" style="position: absolute;top:267rpx;left: 106rpx;" />
+  <view class="point" style="position: absolute;top:300rpx;right: 100rpx;" />
+  <view class="wand" style="position: absolute;top:267rpx;right: 106rpx;" />
 
-    <view class="card1" bindtap="click1">
-      <view style="background-color:#4d9fff;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
-        <image src="/icon/font.svg" style="width:66rpx;height:66rpx;position:absolute;top:19rpx;left:19rpx;" />
-      </view>
-      <text style="font-size:35rpx;font-weight:700;position:absolute;top:20rpx;left:150rpx">拍照取词</text>
-      <text style="font-size:25rpx;color:#8c9498;position:absolute;top:75rpx;left:150rpx">已学12/25个单词</text>
-      <text class='cuIcon-right' style="font-size:40rpx;color:#9e9e9e;position:absolute;right:40rpx;top:45rpx" />
+  <view class="card1" bindtap="click1">
+    <view style="background-color:#4d9fff;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
+      <image src="/icon/font.svg" style="width:66rpx;height:66rpx;position:absolute;top:19rpx;left:19rpx;" />
     </view>
+    <text class="text1">拍照取词</text>
+    <!-- <text style="font-size:25rpx;color:#8c9498;position:absolute;top:75rpx;left:150rpx">已学12/25个单词</text> -->
+    <text class='cuIcon-right' style="font-size:40rpx;color:#9e9e9e;position:absolute;right:40rpx;top:45rpx" />
+  </view>
 
-    <view class="card2" bindtap="click2">
-      <view style="background-color:#febc30;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
-        <image src="/icon/pen.svg" style="width:58rpx;height:58rpx;position:absolute;top:21rpx;left:21rpx;" />
-      </view>
-      <text style="font-size:35rpx;font-weight:700;position:absolute;top:20rpx;left:150rpx">教材选词</text>
-      <text style="font-size:25rpx;color:#8c9498;position:absolute;top:75rpx;left:150rpx">已掌握8/25个单词</text>
-      <text class='cuIcon-right' style="font-size:40rpx;color:#9e9e9e;position:absolute;right:40rpx;top:45rpx" />
+  <view class="card2" bindtap="click2">
+    <view style="background-color:#febc30;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
+      <image src="/icon/pen.svg" style="width:58rpx;height:58rpx;position:absolute;top:21rpx;left:21rpx;" />
     </view>
+    <text class="text1">教材选词</text>
+    <!-- <text style="font-size:25rpx;color:#8c9498;position:absolute;top:75rpx;left:150rpx">已掌握8/25个单词</text> -->
+    <text class='cuIcon-right text2' style="font-size: 40rpx;" />
+  </view>
 
-    <view class="card3" bindtap="click3">
-      <view style="background-color:#bc9efd;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
-        <image src="/icon/cup.svg" style="width:60rpx;height:60rpx;position:absolute;top:20rpx;left:20rpx;" />
-      </view>
-      <text style="font-size:35rpx;font-weight:700;position:absolute;top:20rpx;left:150rpx">挑战闯关</text>
-      <text style="font-size:25rpx;color:#8c9498;position:absolute;top:75rpx;left:150rpx">每次十道题</text>
-      <text class='cuIcon-right' style="font-size:40rpx;color:#9e9e9e;position:absolute;right:40rpx;top:45rpx" />
+  <view class="card3" bindtap="click3">
+    <view style="background-color:#bc9efd;width:100rpx;position:absolute;height:100rpx;top:15rpx;left:30rpx;border-radius:50%">
+      <image src="/icon/cup.svg" style="width:60rpx;height:60rpx;position:absolute;top:20rpx;left:20rpx;" />
     </view>
+    <text class="text1" style="top:20rpx;">挑战闯关</text>
+    <text style="font-size:25rpx;color:#8c9498;position:absolute;top:75rpx;left:150rpx">每次十道题</text>
+    <text class='cuIcon-right text2' style="font-size: 40rpx;" />
+  </view>
 
-    <image src="/icon/wheel.png" style="width:45rpx;height:45rpx;position:absolute;top:950rpx;left:50rpx;" />
-    <text style="position:absolute;top:950rpx;left:100rpx;font-size:30rpx;font-weight:800">课外学习</text>
-    
-    <view style="position:absolute;top:980rpx;left:25rpx;width:700rpx" class="grid col-4 padding-sm">
-      <view class="margin-tb-sm text-center" wx:for="{{studyList}}" wx:key="index">
-        <button bindtap="barChange" data-cur="{{index + 1}}" class="cu-btn round {{curBar==index+1?'bg-blue':'line-gray'}}" style="width:150rpx">
-          <text style="font-size:23rpx">{{item}}</text>
-        </button>
+  <image src="/icon/wheel.png" style="width:45rpx;height:45rpx;position:absolute;top:950rpx;left:50rpx;" />
+  <text style="position:absolute;top:950rpx;left:100rpx;font-size:30rpx;font-weight:800">课外学习</text>
+
+  <view style="position:absolute;top:980rpx;left:25rpx;width:700rpx" class="grid col-4 padding-sm">
+    <view class="margin-tb-sm text-center" wx:for="{{studyList}}" wx:key="index">
+      <button bindtap="barChange" data-cur="{{index + 1}}" class="cu-btn round {{curBar==index+1?'bg-blue':'line-gray'}}" style="width:150rpx">
+        <text style="font-size:23rpx">{{item}}</text>
+      </button>
+    </view>
+  </view>
+
+  <!-- 文章 -->
+  <block wx:if="{{curBar==1}}">
+    <view class="artical">
+      <image src="{{scienceInfo.avatar_url}}"></image>
+      <view class="message">
+        <text class="title">{{scienceInfo.name}}</text>
+        <text class="introduction">{{scienceInfo.introduction}}</text>
+        <view class="study-num">{{scienceInfo.followers_count + 20}}人已学</view>
       </view>
     </view>
-
-    <!-- 文章 -->
-    <block wx:if="{{curBar==1}}">
-      <view class="artical">
-        <image src="{{scienceInfo.avatar_url}}"></image>
-        <view class="message">
-          <text class="title">{{scienceInfo.name}}</text>
-          <text class="introduction">{{scienceInfo.introduction}}</text>
-          <view class="study-num">{{scienceInfo.followers_count + 20}}人已学</view>
-        </view>
-      </view>
-    </block>
-
-    <block wx:if="{{curBar==2}}">
-      <view class="artical">
-        <image src="https://img2.doubanio.com/view/subject/s/public/s33695061.jpg"></image>
-        <view class="message">
-          <text class="title">绿山墙的安妮</text>
-          <text class="introduction">绿山墙农舍的卡思伯特兄妹决定领养一个男孩帮忙做农活，阴错阳差，孤儿院送来了喋喋不休的11岁红发女孩安妮。安妮过上了自己期待已久的幸福生活，却开始不断闯祸，让所有人都头痛不已。但她亲近自然，总给花朵湖泊取名字；喜欢幻想，让生活焕发诗意；善良坚韧，而不失天真；知道努力去追求梦想，也懂得珍惜当下。</text>
-          <view class="study-num">50人已学</view>
-        </view>
-      </view>
-    </block>
-    <block wx:if="{{curBar==3}}">
-      <view class="artical">
-        <image src="https://img9.doubanio.com/view/subject/s/public/s10383885.jpg"></image>
-        <view class="message">
-          <text class="title">剑桥少儿英语</text>
-          <text class="introduction">剑桥少儿课是小时候最喜欢的课，学科兴趣也无疑不是从这里开始渐长的，以至于今天的我仍然很喜欢英语这门学科。当时上课的很多活动都很喜欢，还记得一次特别尴尬的和一个帅帅的男孩子夹气球。第一个老师叫Summer，后来转去私立学校了，不知道现在怎样了</text>
-          <view class="study-num">30人已学</view>
-        </view>
-      </view>
-    </block>
-
-    <block wx:if="{{curBar==4}}">
-      <view class="artical">
-        <image src="https://pic2.zhimg.com/v2-48cfe1eb250279ac1a74982794847392_r.jpg?source=1940ef5c"></image>
-        <view class="message">
-          <text class="title">八十天环游地球</text>
-          <text class="introduction">福格先生带着仆人，从伦敦出发，经历</text>
-          <view class="study-num">30人已学</view>
-        </view>
-      </view>
-    </block>
   </block>
+
+  <block wx:if="{{curBar==2}}">
+    <view class="artical">
+      <image src="https://img2.doubanio.com/view/subject/s/public/s33695061.jpg"></image>
+      <view class="message">
+        <text class="title">绿山墙的安妮</text>
+        <text class="introduction">绿山墙农舍的卡思伯特兄妹决定领养一个男孩帮忙做农活，阴错阳差，孤儿院送来了喋喋不休的11岁红发女孩安妮。安妮过上了自己期待已久的幸福生活，却开始不断闯祸，让所有人都头痛不已。但她亲近自然，总给花朵湖泊取名字；喜欢幻想，让生活焕发诗意；善良坚韧，而不失天真；知道努力去追求梦想，也懂得珍惜当下。</text>
+        <view class="study-num">50人已学</view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{curBar==3}}">
+    <view class="artical">
+      <image src="https://img9.doubanio.com/view/subject/s/public/s10383885.jpg"></image>
+      <view class="message">
+        <text class="title">剑桥少儿英语</text>
+        <text class="introduction">剑桥少儿课是小时候最喜欢的课，学科兴趣也无疑不是从这里开始渐长的，以至于今天的我仍然很喜欢英语这门学科。当时上课的很多活动都很喜欢，还记得一次特别尴尬的和一个帅帅的男孩子夹气球。第一个老师叫Summer，后来转去私立学校了，不知道现在怎样了</text>
+        <view class="study-num">30人已学</view>
+      </view>
+    </view>
+  </block>
+
+  <block wx:if="{{curBar==4}}">
+    <view class="artical">
+      <image src="https://pic2.zhimg.com/v2-48cfe1eb250279ac1a74982794847392_r.jpg?source=1940ef5c"></image>
+      <view class="message">
+        <text class="title">八十天环游地球</text>
+        <text class="introduction">福格先生带着仆人，从伦敦出发，经历</text>
+        <view class="study-num">30人已学</view>
+      </view>
+    </view>
+  </block>
+</block>
 <!-- </scroll-view> -->

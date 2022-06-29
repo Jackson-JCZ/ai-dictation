@@ -8,15 +8,18 @@
   height: 300rpx;
   margin: 0 30rpx;
 }
-.artical image{
+
+.artical image {
   width: 75px;
   height: 80px;
   border-radius: 30rpx;
   margin-right: 10px;
 }
+
 .artical .message {
   width: 420rpx;
 }
+
 .artical .message .title {
   font-size: 32rpx;
   font-weight: bold;
@@ -24,7 +27,7 @@
   white-space: nowrap;
   word-break: break-all;
   overflow: hidden;
-  text-overflow:ellipsis;
+  text-overflow: ellipsis;
 }
 
 .artical .message .introduction {
@@ -33,10 +36,11 @@
   white-space: nowrap;
   word-break: break-all;
   overflow: hidden;
-  text-overflow:ellipsis;
+  text-overflow: ellipsis;
   font-weight: bold;
   color: #99969699;
 }
+
 .artical .message .study-num {
   width: 200rpx;
   height: 50rpx;
@@ -329,4 +333,19 @@
   position: absolute;
   left: 24rpx;
   top: 14rpx;
+}
+
+.text1 {
+  font-size: 35rpx;
+  font-weight: 700;
+  position: absolute;
+  top: 45rpx;
+  left: 150rpx;
+}
+
+.text2 {
+  color: #9e9e9e;
+  position: absolute;
+  right: 40rpx;
+  top: 45rpx;
 }

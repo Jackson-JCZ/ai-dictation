@@ -1,5 +1,9 @@
 // pages/chooseWord/dictation/dictation.js
 const app = getApp();
+wx.cloud.init({
+  env: 'database-2gt2op0zc763020f'
+});
+const db = wx.cloud.database();
 Page({
 
   /**
@@ -57,10 +61,49 @@ Page({
   },
 
   /* 更新当前单词 */
-  updateCurrentWord() {
+  updateCurrentWord: async function() {
     var index = this.data.indexArr[this.data.currentWordIndex];
-    if (index === undefined) {
-      // 学完了
+    if (index === undefined) { // 学完了
+      // 更新学习记录
+      if (app.globalData.openId) {
+        let history = app.globalData.history,
+          wordsList = this.data.wordsList,
+          wordsData = this.data.wordsData;
+
+        let time = new Date();
+        const date = (time.getMonth() + 1) + '/' + time.getDate();
+        let words = [];
+        for (let i = 0; i < wordsList.length; i++) {
+          words.push(`${wordsList[i]} [${wordsData[i].phonetic}]`)
+          for (let explain of wordsData[i].explains) {
+            words[i] += ' ' + explain;
+          }
+        }
+        if (history.length) {
+          const [month, day] = history[0]['date'].split('/');
+          if (time - new Date(`${time.getFullYear()}-${month}-${day}`).getTime() > 86400000) {
+            history.unshift({
+              'date': date,
+              'words': words
+            });
+          } else {
+            history[0].words = history[0].words.concat(words);
+          }
+        } else {
+          history = [{
+            'date': date,
+            'words': words
+          }]
+        }
+        app.globalData.history = history;
+        await db.collection('userInfo').where({
+          _openid: app.globalData.openId
+        }).update({
+          data: {
+            history
+          }
+        });
+      }
       wx.navigateTo({
         url: './complete/complete',
       });

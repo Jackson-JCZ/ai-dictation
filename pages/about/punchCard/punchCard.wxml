@@ -1,4 +1,4 @@
-<calendar id="calendar"></calendar>
+<calendar id="calendar" spotMap="{{spotMap}}"></calendar>
 <view class="margin-lr-lg center margin-top-xs">
   <view class="text-black text-lg text-bold margin-bottom-sm">打卡动态</view>
   <view class="punch-card radius shadow bg-white">

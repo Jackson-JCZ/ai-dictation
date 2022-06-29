@@ -60,9 +60,16 @@ Page({
       }
     }
 
+    // 更新spot
+    var spotMap = {};
+    for (let item of punch) {
+      spotMap[item] = 'spot';
+    }
+
     this.setData({
       accumulateDays,
-      historyPunch
+      historyPunch,
+      spotMap
     });
   },
 
@@ -82,12 +89,12 @@ Page({
     }
     var calendar = this.selectComponent('#calendar');
     if (!calendar.data.open) {
-      calendar.openChange();  // 展开日历
-      await new Promise(function (resolve) {  // 等待一段时间，防止日历未展开
+      calendar.openChange(); // 展开日历
+      await new Promise(function (resolve) { // 等待一段时间，防止日历未展开
         setTimeout(resolve, 300);
       })
     }
-    calendar.switchNowDate();  // 切换今日
+    calendar.switchNowDate(); // 切换今日
 
     return {
       'title': `我在小学英语教育小程序连续打卡${durationDays}天，一起来学习吧!`,
