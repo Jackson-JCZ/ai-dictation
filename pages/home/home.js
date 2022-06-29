@@ -12,7 +12,7 @@ Page({
       },
       "found": {
         color: "green",
-        name: "发现",
+        name: "排行榜",
         icon: 'rankfill'
       },
       "my": {
@@ -49,6 +49,7 @@ Page({
     });
   },
   onShow() {
+    //科幻故事
     const scienceUrl = 'https://www.zhihu.com/api/v4/topics/21853257'
     const context = this
     wx.request({
@@ -59,6 +60,20 @@ Page({
           scienceInfo: res.data
         })
       }
-    })
+    });
+    //历史人文
+    const historyUrl = 'https://api.wmdb.tv/api/v1/top?type=Imdb&skip=0&limit=20&lang=Cn'
+    wx.request({
+      url: historyUrl,
+      method: 'GET',
+      success(res) {
+        console.log(res.data)
+        context.setData({
+          historyInfo: res.data
+        })
+      }
+   })
   }
+  
+
 })

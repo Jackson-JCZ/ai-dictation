@@ -9,12 +9,13 @@
   margin: 0 30rpx;
 }
 .artical image{
-  width: 80px;
+  width: 75px;
   height: 80px;
   border-radius: 30rpx;
+  margin-right: 10px;
 }
 .artical .message {
-  width: 400rpx;
+  width: 420rpx;
 }
 .artical .message .title {
   font-size: 32rpx;
@@ -37,7 +38,7 @@
   color: #99969699;
 }
 .artical .message .study-num {
-  width: 150rpx;
+  width: 200rpx;
   height: 50rpx;
   border-radius: 20px;
   background-color: rgba(245, 249, 252, 100);

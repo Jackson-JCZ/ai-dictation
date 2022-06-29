@@ -9,7 +9,9 @@ Page({
     historyPunch: []
   },
   punch(e) {
-    console.log(e)
+    wx.navigateTo({
+      url: '../../chooseWord/dictation/complete/complete',
+    })
   },
 
   onLoad: async function () {
