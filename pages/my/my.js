@@ -121,7 +121,8 @@ Component({
           const {
             nickName,
             avatarCode,
-            starTotal
+            starTotal,
+            punch
           } = res2.data[0];
           this.setData({
             isLogin: true,
@@ -134,6 +135,7 @@ Component({
           app.globalData.userInfo = this.data.userInfo;
           app.globalData.openId = openId;
           app.globalData.starTotal = starTotal;
+          app.globalData.punch = punch || [];
           wx.hideLoading();
         } else {
           wx.hideLoading();
