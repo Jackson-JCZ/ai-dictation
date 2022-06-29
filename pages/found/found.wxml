@@ -19,7 +19,7 @@
 
         <view class="star">
           <image class="img" src="{{starImg}}"></image>
-          <text>{{item.starTotal}}个</text>
+          <text>{{item.starTotal || 0}}个</text>
         </view>
 
       </view>

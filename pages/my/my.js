@@ -100,53 +100,54 @@ Component({
           isLogin: true,
           userInfo: app.globalData.userInfo
         })
-      } else {
-        // 检测数据库中是否有登录信息
-        wx.showLoading({
-          title: '获取登录状态',
-        });
-        const res = await wx.cloud.callFunction({
-          name: 'loginRequest'
-        })
-        const openId = res.result.openId;
-        this.setData({
-          openId: openId
-        });
-        const res2 = await db.collection('userInfo').where({
-          _openid: openId
-        }).get();
-        console.log('RES2', res2)
-        if (res2.data.length) {
-          // 登录成功
-          const {
-            nickName,
-            avatarCode,
-            starTotal,
-            punch,
-            history
-          } = res2.data[0];
-          this.setData({
-            isLogin: true,
-            userInfo: {
-              nickName: nickName,
-              avatarUrl: avatarCode
-            },
-          });
-          app.globalData.isLogin = true;
-          app.globalData.userInfo = this.data.userInfo;
-          app.globalData.openId = openId;
-          app.globalData.starTotal = starTotal;
-          app.globalData.punch = punch || [];
-          app.globalData.history = history || [];
-          wx.hideLoading();
-        } else {
-          wx.hideLoading();
-          wx.showToast({
-            title: '未登录',
-            icon: 'none'
-          })
-        }
       }
+      // else {
+      // // 检测数据库中是否有登录信息
+      // wx.showLoading({
+      //   title: '获取登录状态',
+      // });
+      // const res = await wx.cloud.callFunction({
+      //   name: 'loginRequest'
+      // })
+      // const openId = res.result.openId;
+      // this.setData({
+      //   openId: openId
+      // });
+      // const res2 = await db.collection('userInfo').where({
+      //   _openid: openId
+      // }).get();
+      // console.log('RES2', res2)
+      // if (res2.data.length) {
+      //   // 登录成功
+      //   const {
+      //     nickName,
+      //     avatarCode,
+      //     starTotal,
+      //     punch,
+      //     history
+      //   } = res2.data[0];
+      //   this.setData({
+      //     isLogin: true,
+      //     userInfo: {
+      //       nickName: nickName,
+      //       avatarUrl: avatarCode
+      //     },
+      //   });
+      //   app.globalData.isLogin = true;
+      //   app.globalData.userInfo = this.data.userInfo;
+      //   app.globalData.openId = openId;
+      //   app.globalData.starTotal = starTotal;
+      //   app.globalData.punch = punch || [];
+      //   app.globalData.history = history || [];
+      //   wx.hideLoading();
+      // } else {
+      //   wx.hideLoading();
+      //   wx.showToast({
+      //     title: '未登录',
+      //     icon: 'none'
+      //   })
+      // }
+      // }
     }
   }
 })

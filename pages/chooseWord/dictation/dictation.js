@@ -61,12 +61,13 @@ Page({
   },
 
   /* 更新当前单词 */
-  updateCurrentWord: async function() {
+  updateCurrentWord: async function () {
     var index = this.data.indexArr[this.data.currentWordIndex];
     if (index === undefined) { // 学完了
-      // 更新学习记录
+      // 更新学习记录和星星数
       if (app.globalData.openId) {
         let history = app.globalData.history,
+          starTotal = app.globalData.starTotal,
           wordsList = this.data.wordsList,
           wordsData = this.data.wordsData;
 
@@ -95,12 +96,17 @@ Page({
             'words': words
           }]
         }
+
+        starTotal += wordsList.length;
+
         app.globalData.history = history;
+        app.globalData.starTotal = starTotal;
         await db.collection('userInfo').where({
           _openid: app.globalData.openId
         }).update({
           data: {
-            history
+            history,
+            starTotal
           }
         });
       }
@@ -174,7 +180,7 @@ Page({
         inputWord: inputWord,
         inputIndex: inputIndex
       })
-    } else if (keyCode === 32 || keyCode < 65 || (keyCode > 90 && keyCode < 97) || keyCode > 122) {
+    } else if (keyCode !== 39 || keyCode < 65 || (keyCode > 90 && keyCode < 97) || keyCode > 122) {
       // 空格或非字母
       return;
     } else {
