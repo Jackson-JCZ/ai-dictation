@@ -32,7 +32,7 @@ Page({
    */
   onShareAppMessage(){
     return {
-      title: `我在小学英语学习小程序学习了${this.data.wordsList.length}个单词，你也来看看吧!`,
+      title: `我在乐趣听写小程序学习了${this.data.wordsList.length}个单词，你也来看看吧!`,
       path: '/pages/home/home'
     }
   },

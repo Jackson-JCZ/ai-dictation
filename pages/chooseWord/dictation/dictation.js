@@ -180,7 +180,7 @@ Page({
         inputWord: inputWord,
         inputIndex: inputIndex
       })
-    } else if (keyCode !== 39 || keyCode < 65 || (keyCode > 90 && keyCode < 97) || keyCode > 122) {
+    } else if ((keyCode !== 39 && keyCode < 65) || (keyCode > 90 && keyCode < 97) || keyCode > 122) {
       // 空格或非字母
       return;
     } else {

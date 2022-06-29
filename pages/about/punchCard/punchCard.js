@@ -97,7 +97,7 @@ Page({
     calendar.switchNowDate(); // 切换今日
 
     return {
-      'title': `我在小学英语教育小程序连续打卡${durationDays}天，一起来学习吧!`,
+      'title': `我在乐趣听写小程序连续打卡${durationDays}天，一起来学习吧!`,
       path: '/pages/home/home'
     }
   }
