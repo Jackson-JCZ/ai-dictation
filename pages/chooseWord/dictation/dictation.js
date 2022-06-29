@@ -87,7 +87,7 @@ Page({
               'words': words
             });
           } else {
-            history[0].words = history[0].words.concat(words);
+            history[0].words = words.concat(history[0].words);
           }
         } else {
           history = [{

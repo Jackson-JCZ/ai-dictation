@@ -3,30 +3,41 @@
   z-index: 0;
   position: relative;
 }
+
 .img1 {
   z-index: 0;
+  width: 100vw;
 }
+
 .img2 {
   z-index: 1;
   position: absolute;
-  top: -60px;
+  top: -30vw;
+  left: 5vw;
+  width: 90vw;
+  height: 90vw;
 }
+
 .card {
   position: relative;
   z-index: 999;
   top: -130px;
   border-radius: 5%;
 }
+
 .rule::before {
   content: "\270E";
 }
+
 .level::before {
   content: "\27BD";
 }
+
 .challenge-btn {
- width: 200px !important;
- height: 30px;
+  width: 200px !important;
+  height: 30px;
 }
+
 .challenge-btn::before {
   content: "\2725";
   font-size: 18px;

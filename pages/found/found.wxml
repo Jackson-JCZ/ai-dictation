@@ -5,8 +5,8 @@
       <view class="cu-item flex-sub {{index==TabCur?'text-green cur':''}}" wx:for="{{3}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
         {{TabIndex[index]}}
       </view>
-  </view>
-    <block wx:for="{{historyAccord}}" wx:for-index="key">
+    </view>
+    <block wx:for="{{historyAccord}}" wx:for-index="key" wx:key="key">
       <view class="rank">
         <view class="number">
           <image wx:if="{{key == 0}}" class="img" src="../../images/first.png"></image>
@@ -16,25 +16,25 @@
           <image class="headPhone" src="{{item.avatarCode=='none'?defaultImg:item.avatarCode}}"></image>
           <text>{{item.nickName}}</text>
         </view>
-        
+
         <view class="star">
           <image class="img" src="{{starImg}}"></image>
           <text>{{item.starTotal}}个</text>
         </view>
-        
+
       </view>
     </block>
     <view class="self-rank">
-        <view class="number">
-          <text>{{yourIndex}}</text>
-          <image class="headPhone" src='{{userInfo.avatarUrl}}'></image>
-          <text>我</text>
-        </view>
-        
-        <view class="star">
-          <image class="img" src="{{starImg}}"></image>
-          <text>{{starTotal}}个</text>
-        </view>
+      <view class="number">
+        <text>{{yourIndex}}</text>
+        <image class="headPhone" src='{{userInfo.avatarUrl}}'></image>
+        <text>我</text>
       </view>
+
+      <view class="star">
+        <image class="img" src="{{starImg}}"></image>
+        <text>{{starTotal}}个</text>
+      </view>
+    </view>
   </view>
 </scroll-view>
