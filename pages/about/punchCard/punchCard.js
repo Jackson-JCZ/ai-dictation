@@ -5,7 +5,9 @@ Page({
     ]
   },
   punch(e) {
-    console.log(e)
+    wx.navigateTo({
+      url: '../../chooseWord/dictation/complete/complete',
+    })
   },
 
   onLoad(options) {

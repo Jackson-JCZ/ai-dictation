@@ -12,7 +12,7 @@ Page({
       },
       "found": {
         color: "green",
-        name: "发现",
+        name: "排行榜",
         icon: 'rankfill'
       },
       "my": {
