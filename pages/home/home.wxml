@@ -59,14 +59,47 @@
         </button>
       </view>
     </view>
+
     <!-- 文章 -->
-    <block>
+    <block wx:if="{{curBar==1}}">
       <view class="artical">
         <image src="{{scienceInfo.avatar_url}}"></image>
         <view class="message">
           <text class="title">{{scienceInfo.name}}</text>
           <text class="introduction">{{scienceInfo.introduction}}</text>
           <view class="study-num">{{scienceInfo.followers_count + 20}}人已学</view>
+        </view>
+      </view>
+    </block>
+
+    <block wx:if="{{curBar==2}}">
+      <view class="artical">
+        <image src="https://img2.doubanio.com/view/subject/s/public/s33695061.jpg"></image>
+        <view class="message">
+          <text class="title">绿山墙的安妮</text>
+          <text class="introduction">绿山墙农舍的卡思伯特兄妹决定领养一个男孩帮忙做农活，阴错阳差，孤儿院送来了喋喋不休的11岁红发女孩安妮。安妮过上了自己期待已久的幸福生活，却开始不断闯祸，让所有人都头痛不已。但她亲近自然，总给花朵湖泊取名字；喜欢幻想，让生活焕发诗意；善良坚韧，而不失天真；知道努力去追求梦想，也懂得珍惜当下。</text>
+          <view class="study-num">50人已学</view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{curBar==3}}">
+      <view class="artical">
+        <image src="https://img9.doubanio.com/view/subject/s/public/s10383885.jpg"></image>
+        <view class="message">
+          <text class="title">剑桥少儿英语</text>
+          <text class="introduction">剑桥少儿课是小时候最喜欢的课，学科兴趣也无疑不是从这里开始渐长的，以至于今天的我仍然很喜欢英语这门学科。当时上课的很多活动都很喜欢，还记得一次特别尴尬的和一个帅帅的男孩子夹气球。第一个老师叫Summer，后来转去私立学校了，不知道现在怎样了</text>
+          <view class="study-num">30人已学</view>
+        </view>
+      </view>
+    </block>
+
+    <block wx:if="{{curBar==4}}">
+      <view class="artical">
+        <image src="https://pic2.zhimg.com/v2-48cfe1eb250279ac1a74982794847392_r.jpg?source=1940ef5c"></image>
+        <view class="message">
+          <text class="title">八十天环游地球</text>
+          <text class="introduction">福格先生带着仆人，从伦敦出发，经历</text>
+          <view class="study-num">30人已学</view>
         </view>
       </view>
     </block>
