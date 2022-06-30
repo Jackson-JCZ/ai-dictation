@@ -53,7 +53,148 @@ Component({
         'img': 'http://m.qpic.cn/psc?/V53HUzqu1STio82SCfOY2wZWaR1AsHvj/ruAMsa53pVQWN7FLK88i5opa4TzNhmATHj4Bwp7*DYLytIdkPpUht6wmMLMCI.M9ltoc*2EXGs70Xz6rQoT6mO*OuNoxdo24LFIsXKs*CSc!/b&bo=AAIAAgAAAAADNxI!&rf=viewer_4&t=5',
         'title': '简单易记语法口诀',
         'like': 'cuIcon-like',
-        'poster': 'http://m.qpic.cn/psc?/V53HUzqu1STio82SCfOY2wZWaR1AsHvj/ruAMsa53pVQWN7FLK88i5opa4TzNhmATHj4Bwp7*DYLytIdkPpUht6wmMLMCI.M9ltoc*2EXGs70Xz6rQoT6mO*OuNoxdo24LFIsXKs*CSc!/b&bo=AAIAAgAAAAADNxI!&rf=viewer_4&t=5'
+        'poster': 'http://m.qpic.cn/psc?/V53HUzqu1STio82SCfOY2wZWaR1AsHvj/ruAMsa53pVQWN7FLK88i5opa4TzNhmATHj4Bwp7*DYLytIdkPpUht6wmMLMCI.M9ltoc*2EXGs70Xz6rQoT6mO*OuNoxdo24LFIsXKs*CSc!/b&bo=AAIAAgAAAAADNxI!&rf=viewer_4&t=5',
+        'text': `人称代词主格趣记歌
+
+        I 是我；you 是你；he，she ，it 他她它；I 的复数是个 we；you 的复数还是 you；男他女她动物它，张三李四单个他，他们的复数都是 they；简单口诀要牢记，要牢记。
+        
+        人称代词主格宾格之歌
+        
+        I 是主格 me 是宾，请你一定记在心；主格用在动词前，动词介词后用宾。
+        
+        you 是主格，也是宾；he 是主格 him 是宾， she 是主格 her 是宾， it 是主格，也是宾， we 是主格 us 是宾， you 是主格，也是宾， they 是主格 them 是宾。
+        
+        2.be动词用法歌
+        
+        我用am，你用are，is连接他，她，它。
+        
+        单数名词用is，复数名词全用are。变疑问，往前提，句末问号莫丢弃。
+        
+        变否定，更容易，be后not莫忘记。疑问否定任你变，句首大写莫迟疑。
+        
+        3.疑问词的用法
+        
+        疑问词放句首，what 什么；where 哪里；when 问时间；
+        
+        how 怎样；要问原因为什么，why 放句首就可以；
+        
+        疑问句有点难，勤做笔记多思考，遇问题别着急，先思考来后提问。
+        
+        4.特殊疑问句用法
+        
+        What用途广，要问“什么”它当先。（What’s this?）
+        
+        How开头来“问安”。(How are you?)
+        
+        Who问“谁”。（Who’s that man?）
+        
+        “谁的”Whose来承担。（Whose eraser is this?）
+        
+        询问“某地”用Where。（Where is her cat?）
+        
+        “哪一个”Which句首站。（Which one?）
+        
+        5.祈使句用法
+        
+        祈使句，祈使句，请求、命令或建议。主语是you常省去，动词原形开头记。
+        
+        否定形式要注意，句首要把Don’t加。要讲客气用please，句首句末没关系。
+        
+        6.动词加-s或-es方法歌诀
+        
+        动词三单现在式，一般词尾加-s。
+        
+        s, x, ch, sh在词尾，直接加上-es。
+        
+        词尾若是字母o，加上-es不用愁。
+        
+        “辅音字母+y“来结尾，变y为i是正规。
+        
+        -es后边紧跟随，study→studies看明白。
+        
+        7.过去式之歌
+        
+        标准过去式加-ed，少量不规则分别记，
+        
+        am和is对was，二人称复数are变were，
+        
+        have和has用had，do和does变did。
+        
+        规则动词过去式构成方法口诀
+        
+        过去式构成有方法，一般词尾把-ed加。
+        
+        如果词尾有个e，直接加d就可以。
+        
+        “辅音字母+y”在词尾，变y为i加ed。
+        
+        “一辅重闭”作尾巴，双写之后-ed加。
+        
+        8.现在进行时用法
+        
+        主语在句首，am, is, are跟在后，
+        
+        现在分词跟着走，其他成分不可丢。
+        
+        表示动作正进行，句中now时间定。
+        
+        一般问句，把be提到句前去。
+        
+        否定句式也简单，be后只把not添。
+        
+        9.have/has的用法口诀
+        
+        动词have表示“有”，位置就在主语后。
+        
+        “三单”主语用has，其他人称用have。
+        
+        10.There be句型用法口诀
+        
+        There be句型有特点，主语放在be后边。
+        
+        主语单数用is，复数主语要用are。
+        
+        变否定，很简单，be后要把not添。
+        
+        变问句也不难，把be提到there前。
+        
+        肯定句中用some，否定/疑问要用any换。
+        
+        11.变一般疑问
+        
+        口诀之一
+        
+        （一）can 、be、do、does在前
+        
+        （二）第一（人称）变第二（人称）
+        
+        （三）末尾用问号，语调用升调
+        
+        （四）有some变any
+        
+        口诀之二
+        
+        （一） 有can有be，can、be提前
+        
+        （二） 没有can、be的，do、does显身手，三单用does，does后动词还原
+        
+        （三） 其他人称do在前
+        
+        12.变否定句
+        
+        口诀之一
+        
+        （一） can、be、do、does后面not添
+        
+        （二） 有some变any
+        
+        诀之二
+        
+        （一）有can有be，can、be后面not添
+        
+        （二）没有can、be、do、does显身手，单三用doesn’t，doesn’t后面动还原
+        
+        （三） 其他人称don’t动词前`
       },
       {
         'img': 'http://m.qpic.cn/psc?/V53HUzqu1STio82SCfOY2wZWaR1AsHvj/ruAMsa53pVQWN7FLK88i5opa4TzNhmATHj4Bwp7*DYLYDUtryWXEgfDfsW83Axe8bQZe1uzMrn4gwYa86xZXm7RC3i0r8mXSV7lCKkBEfnQ!/b&bo=AAIAAgAAAAADNxI!&rf=viewer_4&t=5',
@@ -96,8 +237,9 @@ Component({
       let index = e.currentTarget.dataset.index
       let poster = encodeURIComponent(this.data.gramerCard[index].poster)
       let title = encodeURIComponent(this.data.gramerCard[index].title)
+      let text = encodeURIComponent(this.data.gramerCard[index].text)
       wx.navigateTo({
-        url: `../found/grammerPage/grammerPage?poster=${poster}&title=${title}`,
+        url: `../found/grammerPage/grammerPage?poster=${poster}&title=${title}&text=${text}`,
       })
     }
   },
