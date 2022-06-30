@@ -129,5 +129,6 @@ Page({
         icon: 'none'
       })
     }
-  }
+  },
+  onShareAppMessage(){}
 })

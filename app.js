@@ -17,6 +17,7 @@ App({
       }
     ],
     punch: [],  // 格式['y2022m6d29', 'y2022m6d28', 'y2022m6d27', 'y2022m5d30']
-    history: []
+    history: [],
+    starTotal: 0
   },
 })
