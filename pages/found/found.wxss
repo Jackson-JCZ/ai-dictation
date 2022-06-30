@@ -72,3 +72,11 @@ page{
   justify-content: space-around;
   width: 100%;
 }
+
+.image-card {
+  width: 130px;
+  height: 140px;
+}
+.margin-bottom-xl {
+  margin-bottom: 40px;
+}

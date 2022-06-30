@@ -49,6 +49,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "语法站文章",
+          "pathName": "pages/found/grammerPage/grammerPage",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

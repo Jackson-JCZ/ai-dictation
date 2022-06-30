@@ -2,11 +2,11 @@
 <scroll-view scroll-x class="bg-white nav">
   <view class="flex text-center foundPage">
     <view class="foundTab">
-      <view class="cu-item flex-sub {{index==TabCur?'text-green cur':''}}" wx:for="{{3}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+      <view class="cu-item flex-sub {{index==TabCur?'text-green cur':''}}" wx:for="{{2}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
         {{TabIndex[index]}}
       </view>
     </view>
-    <block wx:for="{{historyAccord}}" wx:for-index="key" wx:key="key">
+    <block wx:if="{{TabCur == 0}}" wx:for="{{historyAccord}}" wx:for-index="key" wx:key="key">
       <view class="rank">
         <view class="number">
           <image wx:if="{{key == 0}}" class="img" src="../../images/first.png"></image>
@@ -24,7 +24,7 @@
 
       </view>
     </block>
-    <view class="self-rank">
+    <view wx:if="{{TabCur == 0}}" class="self-rank">
       <view class="number">
         <text>{{yourIndex}}</text>
         <image class="headPhone" src='{{userInfo.avatarUrl}}'></image>
@@ -36,5 +36,21 @@
         <text>{{starTotal}}个</text>
       </view>
     </view>
+
+    <block wx:if="{{TabCur == 1}}">
+    <view class="grid col-2 padding-sm margin-bottom-xl">
+      <view wx:for="{{gramerCard}}" wx:key="index">
+        <view class="padding-sm radius shadow-warp bg-white margin-sm" bindtap="navToPage" data-index="{{index}}">
+          <image src="{{item.img}}" alt="图片" class="image-card"></image>
+          <view class="flex justify-between margin-top-sm align-center">
+            <text class="text-bold text-sm">{{item.title}}</text>
+            <text class="{{item.like}} text-xl" bindtap="like" data-index="{{index}}"></text>
+          </view>
+        </view>
+      </view>
+    </view>
+      
+    </block>
+
   </view>
 </scroll-view>

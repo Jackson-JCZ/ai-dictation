@@ -14,7 +14,8 @@
     "pages/about/studyLog/studyLog",
     "pages/about/developer/developer",
     "pages/about/punchCard/punchCard",
-    "pages/about/myCollect/myCollect"
+    "pages/about/myCollect/myCollect",
+    "pages/found/grammerPage/grammerPage"
   ],
   "window": {
     "backgroundTextStyle": "light",
