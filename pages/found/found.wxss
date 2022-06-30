@@ -80,3 +80,9 @@ page{
 .margin-bottom-xl {
   margin-bottom: 40px;
 }
+.text-bg, .card-bg {
+  z-index: 1;
+}
+.like {
+  z-index: 2;
+}
