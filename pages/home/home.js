@@ -103,7 +103,8 @@ Page({
         avatarCode,
         starTotal,
         punch,
-        history
+        history,
+        like_articals
       } = res2.data[0];
       // this.setData({
       //   isLogin: true,
@@ -121,6 +122,7 @@ Page({
       app.globalData.starTotal = starTotal || 0;
       app.globalData.punch = punch || [];
       app.globalData.history = history || [];
+      app.globalData.like_articals = like_articals || [];
       wx.hideLoading();
     } else {
       wx.hideLoading();

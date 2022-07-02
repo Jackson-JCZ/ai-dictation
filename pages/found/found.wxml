@@ -1,29 +1,31 @@
 <!--pages/found/found.wxml-->
-<scroll-view scroll-x class="bg-white nav">
-  <view class="flex text-center foundPage">
+
+  <view class="flex text-center foundPage nav">
     <view class="foundTab">
       <view class="cu-item flex-sub {{index==TabCur?'text-green cur':''}}" wx:for="{{2}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
         {{TabIndex[index]}}
       </view>
     </view>
-    <block wx:if="{{TabCur == 0}}" wx:for="{{historyAccord}}" wx:for-index="key" wx:key="key">
-      <view class="rank">
-        <view class="number">
-          <image wx:if="{{key == 0}}" class="img" src="../../images/first.png"></image>
-          <image wx:if="{{key == 1}}" class="img" src="../../images/second.png"></image>
-          <image wx:if="{{key == 2}}" class="img" src="../../images/third.png"></image>
-          <text wx:if="{{key > 2}}" class="rankindex">{{key+1}} </text>
-          <image class="headPhone" src="{{item.avatarCode=='none'?defaultImg:item.avatarCode}}"></image>
-          <text>{{item.nickName}}</text>
-        </view>
+    <scroll-view scroll-y class="bg-white scroll-rank" wx:if="{{TabCur == 0}}">
+      <block wx:for="{{historyAccord}}" wx:for-index="key" wx:key="key">
+        <view class="rank">
+          <view class="number">
+            <image wx:if="{{key == 0}}" class="img" src="../../images/first.png"></image>
+            <image wx:if="{{key == 1}}" class="img" src="../../images/second.png"></image>
+            <image wx:if="{{key == 2}}" class="img" src="../../images/third.png"></image>
+            <text wx:if="{{key > 2}}" class="rankindex">{{key+1}} </text>
+            <image class="headPhone" src="{{item.avatarCode=='none'?defaultImg:item.avatarCode}}"></image>
+            <text>{{item.nickName}}</text>
+          </view>
 
-        <view class="star">
-          <image class="img" src="{{starImg}}"></image>
-          <text>{{item.starTotal || 0}}个</text>
-        </view>
+          <view class="star">
+            <image class="img" src="{{starImg}}"></image>
+            <text>{{item.starTotal || 0}}个</text>
+          </view>
 
-      </view>
-    </block>
+        </view>
+      </block>
+    </scroll-view>
     <view wx:if="{{TabCur == 0}}" class="self-rank">
       <view class="number">
         <text>{{yourIndex}}</text>
@@ -38,19 +40,19 @@
     </view>
 
     <block wx:if="{{TabCur == 1}}">
-    <view class="grid col-2 padding-sm margin-bottom-xl">
-      <view wx:for="{{gramerCard}}" wx:key="index">
-        <view class="padding-sm radius shadow-warp bg-white margin-sm" >
-          <image src="{{item.img}}" alt="图片" class="image-card" bindtap="navToPage" data-index="{{index}}"></image>
-          <view class="flex justify-between margin-top-sm align-center">
-            <text class="text-bold text-sm">{{item.title}}</text>
-            <text class="{{item.like}} text-xl like" bindtap="like" data-index="{{index}}"></text>
+      <view class="grid col-2 padding-sm margin-bottom-xs">
+        <view wx:for="{{gramerCard}}" wx:key="index">
+          <view class="padding-sm radius shadow-warp bg-white margin-sm" >
+            <image src="{{item.img}}" alt="图片" class="image-card" bindtap="navToPage" data-index="{{index}}"></image>
+            <view class="flex justify-between margin-top-sm align-center">
+              <text class="text-bold text-sm">{{item.title}}</text>
+              <text class="{{item.like}} text-xl like" bindtap="like" data-index="{{index}}"></text>
+            </view>
           </view>
         </view>
       </view>
-    </view>
-      
+      <view class="margin-bottom-xl padding-bottom-xl text-grey flex justify-center align-center text-bold">期待更多···</view>
     </block>
 
   </view>
-</scroll-view>
+<!-- </scroll-view> -->
