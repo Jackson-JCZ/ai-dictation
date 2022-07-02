@@ -36,8 +36,7 @@ Component({
         total: 100
       }
     ],
-    gramerCard: [
-      {
+    gramerCard: [{
         'img': 'http://m.qpic.cn/psc?/V53HUzqu1STio82SCfOY2wZWaR1AsHvj/ruAMsa53pVQWN7FLK88i5kGbzZ08KO0TByfYGcyGKDYtpS3AZqIGFDKEPwXoEhp6WS9vzIXpN3BagHxuSZlXddpQKYRBBtnm9aT9RNHpE7Y!/b&bo=AAIAAgAAAAADNxI!&rf=viewer_4&t=5',
         'title': '名词知多少?',
         'like': 'cuIcon-like',
@@ -175,21 +174,33 @@ Component({
       this.setData({
         [changeICon]: this.data.gramerCard[index].like == 'cuIcon-like' ? 'cuIcon-likefill text-red' : 'cuIcon-like'
       })
-      let like_ary = await db.collection('userInfo').where({
+      let {
+        'data': [{
+          'like_articals': like_ary
+        }]
+      } = await db.collection('userInfo').where({
         _openid: app.globalData.openId
       }).get();
-      like_ary = like_ary.data[0].like_articals
-      if(typeof like_ary == undefined) { like_ary = []; }
-      if(like_ary.includes(index)) { like_ary.splice(like_ary.indexOf(index), 1); }
-      else { like_ary.push(index); }
-      db.collection('userInfo').where({ _openid: app.globalData.openId }).update({
+      if (typeof like_ary === undefined) {
+        like_ary = [index];
+      } else {
+        let i = like_ary.indexOf(index);
+        if (i === -1) {
+          like_ary.push(index);
+        } else {
+          like_ary.splice(i, 1);
+        }
+      }
+      db.collection('userInfo').where({
+        _openid: app.globalData.openId
+      }).update({
         data: {
           like_articals: like_ary
         },
-        success(e) { console.log('success', e); },
-        fail(e) { console.log('fail', e); }
-      })
-      app.globalData.like_articals = like_ary
+        success: console.log,
+        fail: console.error
+      });
+      app.globalData.like_articals = like_ary;
     },
     navToPage(e) {
       let index = e.currentTarget.dataset.index
@@ -209,8 +220,8 @@ Component({
           return itemy.starTotal - itemx.starTotal;
         })
       })
-      
-      for(let i of app.globalData.like_articals) {
+
+      for (let i of app.globalData.like_articals) {
         console.log(i)
         this.setData({
           ['gramerCard[' + i + '].like']: 'cuIcon-likefill text-red'

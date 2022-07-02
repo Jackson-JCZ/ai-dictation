@@ -58,5 +58,5 @@
 
 <!-- 进度条 -->
 <view class='load-progress show' style="top:0px;">
-  <view class='load-progress-bar bg-green' style="transform: translate3d(-{{100-loadProgress}}%, 0px, 0px);" />
+  <view class='load-progress-bar bg-green' style="height: 8rpx;transform: translate3d(-{{100-loadProgress}}%, 0px, 0px);" />
 </view>

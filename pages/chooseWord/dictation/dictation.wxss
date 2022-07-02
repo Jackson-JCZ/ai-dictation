@@ -11,7 +11,7 @@ page {
 
 .hover2 {
   position: absolute;
-  top: 30rpx;
+  top: 50rpx;
 }
 
 .hover {
