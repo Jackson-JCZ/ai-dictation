@@ -38,8 +38,8 @@
 
 <view class="hover3" wx:if="{{showRight}}">
   <view class="hover4">
-  <text class="cuIcon-roundcheck text-green text-xsl" />
-  <text class="text-lg margin-sm">恭喜你答对了!</text>
+    <text class="cuIcon-roundcheck text-green text-xsl" />
+    <text class="text-lg margin-sm">恭喜你答对了!</text>
   </view>
 </view>
 
@@ -54,4 +54,9 @@
       <view class="action margin-0 flex-sub solid-left" bindtap="clickAnswer">确定</view>
     </view>
   </view>
+</view>
+
+<!-- 进度条 -->
+<view class='load-progress show' style="top:0px;">
+  <view class='load-progress-bar bg-green' style="transform: translate3d(-{{100-loadProgress}}%, 0px, 0px);" />
 </view>

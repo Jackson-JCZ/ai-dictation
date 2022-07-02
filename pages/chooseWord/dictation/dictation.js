@@ -24,7 +24,9 @@ Page({
     indexArr: [],
     currentWordIndex: 0,
     showAnswerModal: false, // 展示答案
-    showAnswer: false
+    showAnswer: false,
+    loadProgress: 0, // 进度条
+    progressStep: 0 // 进度条步长
   },
 
   /**
@@ -43,7 +45,8 @@ Page({
     this.setData({
       wordsList: wordsList,
       wordsData: wordsData,
-      indexArr: indexArr
+      indexArr: indexArr,
+      progressStep: 100 / wordsList.length
     })
 
     // 播放音频
@@ -58,6 +61,11 @@ Page({
     // 答对音频
     this.audioCtx2 = wx.createInnerAudioContext();
     this.audioCtx2.src = '/music/bingo.mp3';
+
+    // 更新进度条
+    setTimeout(() => {
+      this.updateProgress();
+    }, 700);
   },
 
   /* 更新当前单词 */
@@ -271,6 +279,7 @@ Page({
         showAnswer: false
       });
       this.updateCurrentWord();
+      this.updateProgress();
       return;
     }
 
@@ -307,6 +316,7 @@ Page({
           showExplains: false,
           inputIndex: [0, 0]
         });
+        that.updateProgress(); // 更新进度条
       }, 1500);
     } else {
       wx.showToast({
@@ -314,5 +324,10 @@ Page({
         icon: 'none'
       });
     }
+  },
+  updateProgress() {
+    this.setData({
+      loadProgress: this.data.loadProgress + this.data.progressStep
+    });
   }
 })
