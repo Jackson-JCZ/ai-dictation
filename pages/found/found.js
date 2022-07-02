@@ -167,7 +167,7 @@ Component({
         // scrollLeft: (e.currentTarget.dataset.id - 1) * 60
       });
     },
-    like(e) {
+    async like(e) {
       let index = e.currentTarget.dataset.index
       let changeICon = 'gramerCard[' + index + '].like'
       const _ = db.command
@@ -175,20 +175,21 @@ Component({
       this.setData({
         [changeICon]: this.data.gramerCard[index].like == 'cuIcon-like' ? 'cuIcon-likefill text-red' : 'cuIcon-like'
       })
-      db.collection("userInfo").where({
+      let like_ary = await db.collection('userInfo').where({
         _openid: app.globalData.openId
-      }).update({
+      }).get();
+      like_ary = like_ary.data[0].like_articals
+      if(typeof like_ary == undefined) { like_ary = []; }
+      if(like_ary.includes(index)) { like_ary.splice(like_ary.indexOf(index), 1); }
+      else { like_ary.push(index); }
+      db.collection('userInfo').where({ _openid: app.globalData.openId }).update({
         data: {
-          'abc': 1,
-          'like_articals': + _.exists ? ( _.in(index) ? _.pull(index) : _.push(index)) : []
+          like_articals: like_ary
         },
-        success(e) {
-          console.log('success',e)
-        },
-        fail(e){
-          console.log('fail',e)
-        }
+        success(e) { console.log('success', e); },
+        fail(e) { console.log('fail', e); }
       })
+      app.globalData.like_articals = like_ary
     },
     navToPage(e) {
       let index = e.currentTarget.dataset.index
@@ -208,6 +209,13 @@ Component({
           return itemy.starTotal - itemx.starTotal;
         })
       })
+      
+      for(let i of app.globalData.like_articals) {
+        console.log(i)
+        this.setData({
+          ['gramerCard[' + i + '].like']: 'cuIcon-likefill text-red'
+        })
+      }
       //已登录状态
       if (app.globalData.isLogin) {
         //获取个人排名
