@@ -5,6 +5,9 @@
 page{
   background-color: white;
 }
+.scroll-rank {
+  height: 73vh;
+}
 
 .img {
   width: 1.5rem;
